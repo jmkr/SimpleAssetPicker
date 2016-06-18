@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                    DESC
 
-  s.homepage     = "http://EXAMPLE/SimpleAssetPicker"
+  s.homepage     = "https://github.com/jmkr/SimpleAssetPicker.git"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
   s.author             = { "John Meeker" => "jmeeker516@gmail.com" }
   # Or just: s.author    = "John Meeker"
   # s.authors            = { "John Meeker" => "jmeeker516@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/John Meeker"
+  # s.social_media_url   = "http://twitter.com/meekr5"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/SimpleAssetPicker.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/jmkr/SimpleAssetPicker.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
