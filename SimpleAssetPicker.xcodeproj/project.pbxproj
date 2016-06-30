@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5217D9881D25A3AA004A6DED /* UIImage+SAPAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5217D9871D25A3AA004A6DED /* UIImage+SAPAdditions.swift */; };
+		5217D98A1D25A47C004A6DED /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5217D9891D25A47C004A6DED /* SimpleAssetPicker.bundle */; };
+		526D65A41D19B0A100E8029C /* SimpleAssetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65A31D19B0A100E8029C /* SimpleAssetPickerViewController.swift */; };
+		526D65A61D2186E300E8029C /* AssetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65A51D2186E300E8029C /* AssetCollectionViewController.swift */; };
+		526D65A81D21873D00E8029C /* AssetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65A71D21873D00E8029C /* AssetDetailViewController.swift */; };
+		526D65AA1D21876900E8029C /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65A91D21876900E8029C /* AssetCollectionViewCell.swift */; };
+		526D65AD1D2187D500E8029C /* NSIndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */; };
+		526D65AF1D21880900E8029C /* CIImage+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AE1D21880900E8029C /* CIImage+Convenience.swift */; };
+		526D65B11D21889E00E8029C /* SimpleAssetPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */; };
 		52FB68E11D14C10800C17E24 /* SimpleAssetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 52FB68E01D14C10800C17E24 /* SimpleAssetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FDBD8010D23656422CC907 /* Pods_SimpleAssetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE0C63CBAFFF71775584B3 /* Pods_SimpleAssetPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		089B390F84BE2F46BFC000A3 /* Pods-SimpleAssetPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAssetPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleAssetPicker/Pods-SimpleAssetPicker.release.xcconfig"; sourceTree = "<group>"; };
+		5217D9871D25A3AA004A6DED /* UIImage+SAPAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SAPAdditions.swift"; sourceTree = "<group>"; };
+		5217D9891D25A47C004A6DED /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SimpleAssetPicker.bundle; sourceTree = "<group>"; };
+		526D65A31D19B0A100E8029C /* SimpleAssetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerViewController.swift; sourceTree = "<group>"; };
+		526D65A51D2186E300E8029C /* AssetCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewController.swift; sourceTree = "<group>"; };
+		526D65A71D21873D00E8029C /* AssetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailViewController.swift; sourceTree = "<group>"; };
+		526D65A91D21876900E8029C /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
+		526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Convenience.swift"; sourceTree = "<group>"; };
+		526D65AE1D21880900E8029C /* CIImage+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage+Convenience.swift"; sourceTree = "<group>"; };
+		526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerConfig.swift; sourceTree = "<group>"; };
 		52FB68DD1D14C10800C17E24 /* SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FB68E01D14C10800C17E24 /* SimpleAssetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleAssetPicker.h; sourceTree = "<group>"; };
 		52FB68E21D14C10800C17E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +50,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5217D9861D25A380004A6DED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5217D9871D25A3AA004A6DED /* UIImage+SAPAdditions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		526D65AB1D2187BF00E8029C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */,
+				526D65AE1D21880900E8029C /* CIImage+Convenience.swift */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		52FB68D31D14C10800C17E24 = {
 			isa = PBXGroup;
 			children = (
@@ -54,25 +89,24 @@
 			isa = PBXGroup;
 			children = (
 				52FB68E01D14C10800C17E24 /* SimpleAssetPicker.h */,
+				526D65AB1D2187BF00E8029C /* Categories */,
 				52FB68E91D14C3E400C17E24 /* Controllers */,
+				5217D9861D25A380004A6DED /* Extensions */,
 				52FB68EA1D14C3ED00C17E24 /* Models */,
-				52FB68E81D14C3DE00C17E24 /* Resources */,
 				52FB68EB1D14C3F600C17E24 /* Views */,
 				52FB68E21D14C10800C17E24 /* Info.plist */,
+				526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */,
+				5217D9891D25A47C004A6DED /* SimpleAssetPicker.bundle */,
 			);
 			path = SimpleAssetPicker;
-			sourceTree = "<group>";
-		};
-		52FB68E81D14C3DE00C17E24 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		52FB68E91D14C3E400C17E24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				526D65A31D19B0A100E8029C /* SimpleAssetPickerViewController.swift */,
+				526D65A51D2186E300E8029C /* AssetCollectionViewController.swift */,
+				526D65A71D21873D00E8029C /* AssetDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +121,7 @@
 		52FB68EB1D14C3F600C17E24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				526D65A91D21876900E8029C /* AssetCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -178,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5217D98A1D25A47C004A6DED /* SimpleAssetPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +257,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526D65A41D19B0A100E8029C /* SimpleAssetPickerViewController.swift in Sources */,
+				526D65A61D2186E300E8029C /* AssetCollectionViewController.swift in Sources */,
+				526D65A81D21873D00E8029C /* AssetDetailViewController.swift in Sources */,
+				526D65AF1D21880900E8029C /* CIImage+Convenience.swift in Sources */,
+				5217D9881D25A3AA004A6DED /* UIImage+SAPAdditions.swift in Sources */,
+				526D65B11D21889E00E8029C /* SimpleAssetPickerConfig.swift in Sources */,
+				526D65AD1D2187D500E8029C /* NSIndexSet+Convenience.swift in Sources */,
+				526D65AA1D21876900E8029C /* AssetCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5523468A8549E9A7C2E35AE /* Pods-SimpleAssetPicker.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,6 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jmkr.ios.SimpleAssetPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -339,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 089B390F84BE2F46BFC000A3 /* Pods-SimpleAssetPicker.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
