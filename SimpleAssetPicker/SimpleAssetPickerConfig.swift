@@ -30,7 +30,7 @@ public class SimpleAssetPickerConfig: NSObject {
     
     override init() {
         self.numCellsPerRow = 3
-        self.assetSelectedImageName = "thumb-check.png"
+        self.assetSelectedImageName = "thumb-check"
         self.assetDeselectedImageName = "uzysAP_ico_photo_thumb_uncheck"
         self.initialSelectionBtnColor = UIColor.grayColor()
         self.finishedSelectionBtnColor = UIColor.blackColor()

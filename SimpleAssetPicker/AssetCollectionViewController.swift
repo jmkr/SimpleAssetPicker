@@ -190,24 +190,24 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
         })
 
         if let bundle = self.assetBundle {
-            let image = UIImage(named: SimpleAssetPickerConfig.sharedConfig().assetSelectedImageName!, inBundle: bundle, compatibleWithTraitCollection: nil)
+            let image = UIImage.imageInBundle(bundle, named: SimpleAssetPickerConfig.sharedConfig().assetSelectedImageName!)
             cell?.checkMarkImageView.image = image
         }
 
         return cell!
     }
 
-//    override public func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        guard let selectedIndexPaths = collectionView.indexPathsForSelectedItems() else { return true }
-//        for toDeselect in selectedIndexPaths {
-//            if toDeselect == indexPath {
-//                print("already selected???")
-//                collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-////                return false
-//            }
-//        }
-//        return true
-//    }
+    override public func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+        guard let selectedIndexPaths = collectionView.indexPathsForSelectedItems() else { return true }
+        for toDeselect in selectedIndexPaths {
+            if toDeselect == indexPath {
+                print("already selected???")
+                collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+                return false
+            }
+        }
+        return true
+    }
 
     override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         guard let selectedIndexPaths = collectionView.indexPathsForSelectedItems() else { return }

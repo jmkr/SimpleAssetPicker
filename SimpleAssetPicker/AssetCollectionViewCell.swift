@@ -35,13 +35,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
 
                 print("selected cell \(representedAssetIdentifier)")
 
-                UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseOut, .AllowUserInteraction], animations: { 
-                    self.transform = CGAffineTransformMakeScale(0.97, 0.97)
-                    }, completion: { (finished) in
-                        UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseIn, .AllowUserInteraction], animations: {
-                            self.transform = CGAffineTransformIdentity
-                            }, completion: nil)
-                })
+                
                 
                 
             } else {
@@ -57,6 +51,14 @@ class AssetCollectionViewCell: UICollectionViewCell {
 //                            }, completion: nil)
 //                })
             }
+            
+            UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseOut, .AllowUserInteraction], animations: {
+                self.transform = CGAffineTransformMakeScale(0.97, 0.97)
+                }, completion: { (finished) in
+                    UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseIn, .AllowUserInteraction], animations: {
+                        self.transform = CGAffineTransformIdentity
+                        }, completion: nil)
+            })
         }
     }
 }

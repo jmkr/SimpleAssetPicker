@@ -9,8 +9,7 @@
 import Foundation
 
 extension UIImage {
-    class func bundledImage(named: String) -> UIImage? {
-        let podBundle = NSBundle(forClass: self.classForCoder())
+    class func imageInBundle(podBundle: NSBundle, named: String) -> UIImage? {
         if let bundleURL = podBundle.URLForResource("SimpleAssetPicker", withExtension: "bundle") {
             if let bundle = NSBundle(URL: bundleURL) {
                 let image = UIImage(named: named, inBundle: bundle, compatibleWithTraitCollection: nil)
