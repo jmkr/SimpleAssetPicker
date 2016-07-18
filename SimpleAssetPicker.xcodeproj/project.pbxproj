@@ -16,6 +16,7 @@
 		526D65AD1D2187D500E8029C /* NSIndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */; };
 		526D65AF1D21880900E8029C /* CIImage+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AE1D21880900E8029C /* CIImage+Convenience.swift */; };
 		526D65B11D21889E00E8029C /* SimpleAssetPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */; };
+		52A261E21D2B3CA30088E565 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A261E11D2B3CA30088E565 /* GradientView.swift */; };
 		52FB68E11D14C10800C17E24 /* SimpleAssetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 52FB68E01D14C10800C17E24 /* SimpleAssetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FDBD8010D23656422CC907 /* Pods_SimpleAssetPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AE0C63CBAFFF71775584B3 /* Pods_SimpleAssetPicker.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Convenience.swift"; sourceTree = "<group>"; };
 		526D65AE1D21880900E8029C /* CIImage+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage+Convenience.swift"; sourceTree = "<group>"; };
 		526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerConfig.swift; sourceTree = "<group>"; };
+		52A261E11D2B3CA30088E565 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		52FB68DD1D14C10800C17E24 /* SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FB68E01D14C10800C17E24 /* SimpleAssetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleAssetPicker.h; sourceTree = "<group>"; };
 		52FB68E21D14C10800C17E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				526D65A91D21876900E8029C /* AssetCollectionViewCell.swift */,
+				52A261E11D2B3CA30088E565 /* GradientView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				526D65B11D21889E00E8029C /* SimpleAssetPickerConfig.swift in Sources */,
 				526D65AD1D2187D500E8029C /* NSIndexSet+Convenience.swift in Sources */,
 				526D65AA1D21876900E8029C /* AssetCollectionViewCell.swift in Sources */,
+				52A261E21D2B3CA30088E565 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

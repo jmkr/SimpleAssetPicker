@@ -9,29 +9,45 @@
 import Foundation
 import UIKit
 
+public enum SimpleAssetPickerMediaType: Int {
+    case Any    = -1
+    case Image  = 1
+    case Video  = 2
+    case Audio  = 3
+}
+
 public class SimpleAssetPickerConfig: NSObject {
     private static var instance: SimpleAssetPickerConfig!
-    
-    // Public vars
-    var numCellsPerRow: Int?
+
+    // Asset selection constraints
+    var maxVideoSelectionAmount: Int?
+    var maxPhotoSelectionAmount: Int?
+    var maxMediaSelectionAmount: Int?
+
+    // Appearance config variables
+    var numberOfItemsPerRow: Int?
+    public var pickerMediaType: SimpleAssetPickerMediaType?
     var assetSelectedImageName: String?
-    var assetDeselectedImageName: String?
     var initialSelectionBtnColor: UIColor?
     var finishedSelectionBtnColor: UIColor?
     var cellSize: CGSize?
     var collectionViewEdgeInsets: UIEdgeInsets?
     var verticalCellSpacing: Float?
-    
+
     // Shared Instance
     public class func sharedConfig() -> SimpleAssetPickerConfig {
         self.instance = (self.instance ?? SimpleAssetPickerConfig())
         return self.instance
     }
-    
+
+    // Default values
     override init() {
-        self.numCellsPerRow = 3
+        self.maxVideoSelectionAmount = 0
+        self.maxPhotoSelectionAmount = 3
+        self.maxMediaSelectionAmount = 3
+        self.numberOfItemsPerRow = 3
+        self.pickerMediaType = .Any
         self.assetSelectedImageName = "thumb-check"
-        self.assetDeselectedImageName = "uzysAP_ico_photo_thumb_uncheck"
         self.initialSelectionBtnColor = UIColor.grayColor()
         self.finishedSelectionBtnColor = UIColor.blackColor()
         self.cellSize = CGSize(width: 120.0, height: 120.0)

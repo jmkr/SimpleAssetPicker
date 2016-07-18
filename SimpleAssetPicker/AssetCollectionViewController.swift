@@ -17,9 +17,8 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
     
     public var assetsFetchResults: PHFetchResult = PHFetchResult()
     var assetCollection: PHAssetCollection = PHAssetCollection()
-    
-    @IBOutlet weak var addButton: UIBarButtonItem!
-    
+    public var selectedAssets: [PHAsset]?
+
     private var imageManager: PHCachingImageManager?
     private var previousPreheatRect: CGRect?
     private var assetBundle: NSBundle?
@@ -27,9 +26,13 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
     private var AssetGridThumbnailSize = CGSize()
     
     override public func awakeFromNib() {
-        self.imageManager = PHCachingImageManager()
-        self.resetCachedAssets()
-        self.collectionView?.allowsSelection = true
+
+        imageManager = PHCachingImageManager()
+        resetCachedAssets()
+        collectionView?.allowsSelection = true
+        collectionView?.allowsMultipleSelection = true
+
+//        hideNextButton()
 
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
 
@@ -40,26 +43,26 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
             }
         }
     }
-    
+
     deinit {
         PHPhotoLibrary.sharedPhotoLibrary().unregisterChangeObserver(self)
     }
     
     override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        selectedAssets = []
+
         let config = SimpleAssetPickerConfig.sharedConfig()
 
         // Determine the size of the thumbnails to request from the PHCachingImageManager
         if let edgeInsets = config.collectionViewEdgeInsets {
             self.collectionView?.contentInset = edgeInsets
             
-            if let numCellsPerRow = config.numCellsPerRow {
+            if let numberOfItemsPerRow = config.numberOfItemsPerRow {
                 let screenWidth = UIScreen.mainScreen().bounds.width
-                let horizSections = numCellsPerRow + 1
-                let cellWidth = floor((screenWidth - (CGFloat(horizSections) * (edgeInsets.left)) ) / CGFloat(numCellsPerRow))
-                print("Cell Width \(cellWidth)")
-                print("Screen width \(screenWidth)")
+                let horizontalSections = numberOfItemsPerRow + 1
+                let cellWidth = floor((screenWidth - (CGFloat(horizontalSections) * (edgeInsets.left)) ) / CGFloat(numberOfItemsPerRow))
 
                 if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
                     flowLayout.minimumLineSpacing = CGFloat(config.verticalCellSpacing ?? 0.0)
@@ -71,38 +74,33 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
                 }
             }
         }
-        
-        // Add button to the navigation bar if the asset collection supports adding content.
-        if self.assetCollection.canPerformEditOperation(.AddContent) == true {
-            self.navigationItem.rightBarButtonItem = self.addButton;
-        } else {
-            self.navigationItem.rightBarButtonItem = nil;
-        }
     }
     
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         // Begin caching assets in and around collection view's visible rect.
-        self.updateCachedAssets()
+        updateCachedAssets()
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Configure the destination AssetViewController.
-        if #available(iOS 9.1, *) {
-            if segue.destinationViewController.isKindOfClass(AssetDetailViewController.classForCoder()) {
-                let assetViewController = segue.destinationViewController as! AssetDetailViewController
-                if let cell = sender as? UICollectionViewCell {
-                    guard let indexPath = self.collectionView?.indexPathForCell(cell) else { return }
-                    if let asset = self.assetsFetchResults[indexPath.item] as? PHAsset {
-                        assetViewController.asset = asset
-                        assetViewController.assetCollection = self.assetCollection
-                    }
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-        }
+        
+        
+//        // Configure the destination AssetViewController.
+//        if #available(iOS 9.1, *) {
+//            if segue.destinationViewController.isKindOfClass(AssetDetailViewController.classForCoder()) {
+//                let assetViewController = segue.destinationViewController as! AssetDetailViewController
+//                if let cell = sender as? UICollectionViewCell {
+//                    guard let indexPath = self.collectionView?.indexPathForCell(cell) else { return }
+//                    if let asset = self.assetsFetchResults[indexPath.item] as? PHAsset {
+//                        assetViewController.asset = asset
+//                        assetViewController.assetCollection = self.assetCollection
+//                    }
+//                }
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
     }
     
     // MARK: - PHPhotoLibraryChangeObserver
@@ -110,7 +108,7 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
     public func photoLibraryDidChange(changeInstance: PHChange) {
         // Check if there are changes to the assets we are showing.
         guard let collectionChanges = changeInstance.changeDetailsForFetchResult(assetsFetchResults) else { return }
-        
+
         /*
          Change notifications may be made on a background queue. Re-dispatch to the
          main queue before acting on the change as we'll be updating the UI.
@@ -158,7 +156,6 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
     // MARK: - UICollectionViewDataSource
     
     override public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return self.assetsFetchResults.count
     }
     
@@ -167,67 +164,84 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
             return UICollectionViewCell()
         }
         
-        // Dequeue a GridViewCell.
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellReuseIdentifier, forIndexPath: indexPath) as? AssetCollectionViewCell
-        cell?.representedAssetIdentifier = asset.localIdentifier
-        
-        // Add a badge to the cell if the PHAsset represents a Live Photo.
-        if #available(iOS 9.1, *) {
-            if asset.mediaSubtypes == PHAssetMediaSubtype.PhotoLive {
-                let badge = PHLivePhotoView.livePhotoBadgeImageWithOptions(.OverContent)
-                cell?.livePhotoBadgeImageView.image = badge
+        // Dequeue a AssetCollectionViewCell.
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellReuseIdentifier, forIndexPath: indexPath) as? AssetCollectionViewCell {
+            cell.representedAssetIdentifier = asset.localIdentifier
+            
+            // Add a badge to the cell if the PHAsset represents a Live Photo.
+            if #available(iOS 9.1, *) {
+                if asset.mediaSubtypes == PHAssetMediaSubtype.PhotoLive {
+                    let badge = PHLivePhotoView.livePhotoBadgeImageWithOptions(.OverContent)
+                    cell.livePhotoBadgeImageView.image = badge
+                }
+            } else {
+                // Fallback on earlier versions
             }
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        // Request an image for the asset from the PHCachingImageManager.
-        self.imageManager?.requestImageForAsset(asset, targetSize: self.AssetGridThumbnailSize, contentMode: .AspectFill, options: nil, resultHandler: { (result, info) -> Void in
-            // Set the cell's thumbnail image if it's still showing the same asset.
-            if cell?.representedAssetIdentifier == asset.localIdentifier {
-                cell?.imageView.image = result
+
+            // Load icon assets from Bundle.
+            if let bundle = self.assetBundle {
+                let checkMarkImage = UIImage.imageInBundle(bundle, named: SimpleAssetPickerConfig.sharedConfig().assetSelectedImageName!)
+                cell.checkMarkImageView.image = checkMarkImage
+                
+                let cameraImage = UIImage.imageInBundle(bundle, named: "camera-icon")
+                cell.cameraIconImageView.image = cameraImage
             }
-        })
 
-        if let bundle = self.assetBundle {
-            let image = UIImage.imageInBundle(bundle, named: SimpleAssetPickerConfig.sharedConfig().assetSelectedImageName!)
-            cell?.checkMarkImageView.image = image
+            // Hide Video-only UI.
+            cell.cameraIconImageView.hidden = true
+            cell.videoLengthLabel.hidden = true
+            cell.gradientView.hidden = true
+            if asset.mediaType == .Video {
+                cell.cameraIconImageView.hidden = false
+                cell.videoLengthLabel.hidden = false
+                cell.gradientView.hidden = false
+                cell.videoLengthLabel.text = cell.getTimeStringOfTimeInterval(asset.duration)
+            }
+
+            // Request an image for the asset from the PHCachingImageManager.
+            self.imageManager?.requestImageForAsset(asset, targetSize: self.AssetGridThumbnailSize, contentMode: .AspectFill, options: nil, resultHandler: { (result, info) -> Void in
+                // Set the cell's thumbnail image if it's still showing the same asset.
+                if cell.representedAssetIdentifier == asset.localIdentifier {
+                    cell.imageView.image = result
+                }
+            })
+
+            return cell
         }
 
-        return cell!
+        return UICollectionViewCell()
     }
 
     override public func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         guard let selectedIndexPaths = collectionView.indexPathsForSelectedItems() else { return true }
+
         for toDeselect in selectedIndexPaths {
             if toDeselect == indexPath {
-                print("already selected???")
                 collectionView.deselectItemAtIndexPath(indexPath, animated: true)
                 return false
             }
         }
+
         return true
     }
 
     override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         guard let selectedIndexPaths = collectionView.indexPathsForSelectedItems() else { return }
-        
-        
-//        print("selectedIndexPaths \(selectedIndexPaths)")
-        
-        for toDeselect in selectedIndexPaths {
-            print("toDeselect \(toDeselect)")
-            if indexPath != toDeselect {
-                
-                print("deselecting \(toDeselect.row)")
-                collectionView.deselectItemAtIndexPath(toDeselect, animated: true)
+
+        if selectedIndexPaths.count > SimpleAssetPickerConfig.sharedConfig().maxMediaSelectionAmount {
+            for toDeselect in selectedIndexPaths {
+                if indexPath != toDeselect {
+                    collectionView.deselectItemAtIndexPath(toDeselect, animated: true)
+                    break
+                }
             }
         }
+
+        self.updateSelectedAssetsWithIndexPaths(collectionView.indexPathsForSelectedItems() ?? [])
     }
 
     override public func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        print("didDeselect \(indexPath.row)")
-//        collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+        self.updateSelectedAssetsWithIndexPaths(collectionView.indexPathsForSelectedItems() ?? [])
     }
 
     // MARK: UIScrollViewDelegate
@@ -235,6 +249,25 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
     override public func scrollViewDidScroll(scrollView: UIScrollView) {
         // Update cached assets for the new visible area.
         self.updateCachedAssets()
+    }
+    
+    // MARK: Media selection
+    func updateSelectedAssetsWithIndexPaths(indexPaths: [NSIndexPath]) {
+        let config = SimpleAssetPickerConfig.sharedConfig()
+        if indexPaths.count > 0 && indexPaths.count <= config.maxMediaSelectionAmount {
+            print("Meets requirements \(indexPaths.count)")
+            var assets = [PHAsset]()
+            for indexPath in indexPaths {
+                assets.append(self.assetsFetchResults.objectAtIndex(indexPath.item) as! PHAsset)
+            }
+            self.selectedAssets = assets
+//            showNextButton()
+            
+        } else {
+            print("Broke selection requirements")
+            self.selectedAssets = []
+//            hideNextButton()
+        }
     }
     
     // MARK: - Asset Caching
@@ -357,29 +390,5 @@ public class AssetCollectionViewController: UICollectionViewController, PHPhotoL
         }
         return indexPaths
     }
-    
-    // MARK: - Actions
-    
-    @IBAction func handleAddButtonItem(sender: AnyObject) {
-        // Create a random dummy image.
-        let rect = rand() % 2 == 0 ? CGRect(x: 0, y: 0, width: 400, height: 300) : CGRect(x: 0, y: 0, width: 300, height: 400)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 1.0)
-        UIColor(hue: CGFloat((rand() % 100) / 100), saturation: 1.0, brightness: 1.0, alpha: 1.0).setFill()
-        UIRectFillUsingBlendMode(rect, CGBlendMode.Normal)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        // Add it to the photo library
-        PHPhotoLibrary.sharedPhotoLibrary().performChanges({ () -> Void in
-            let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
-            
-            let assetCollectionChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection)
-            assetCollectionChangeRequest?.addAssets([assetChangeRequest.placeholderForCreatedAsset!])
-        }) { (success, error) -> Void in
-            if success == false {
-                print("Error creation asset: \(error)")
-            }
-        }
-    }
-    
+
 }
