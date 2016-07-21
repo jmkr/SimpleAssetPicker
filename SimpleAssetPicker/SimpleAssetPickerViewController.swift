@@ -13,9 +13,7 @@ import PhotosUI
 private var AssetCollectionCellReuseIdentifier = "AssetCollectionViewCell"
 
 public protocol SimpleAssetPickerDelegate: class {
-    func didFinishPickingAssets(picker: SimpleAssetPickerViewController, assets: [PHAsset]?)
     func didCancel(picker: SimpleAssetPickerViewController)
-    func didExceedMaxSelectionAmount(picker: SimpleAssetPickerViewController)
     func didSatisfyMediaRequirements(picker: SimpleAssetPickerViewController, assets: [PHAsset]?)
     func didBreakMediaRequirements(picker: SimpleAssetPickerViewController)
 }
@@ -24,7 +22,16 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
 
     // Public vars
     public weak var delegate: SimpleAssetPickerDelegate?
-    public var assetsFetchResults: PHFetchResult = PHFetchResult()
+    public lazy var assetsFetchResults: PHFetchResult = {
+        let mediaFetchOptions = PHFetchOptions()
+        mediaFetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        if let mediaType = SimpleAssetPickerConfig.sharedConfig().pickerMediaType {
+            if mediaType == .Video || mediaType == .Image || mediaType == .Audio {
+                mediaFetchOptions.predicate = NSPredicate(format: "mediaType == %d", mediaType.rawValue)
+            }
+        }
+        return PHAsset.fetchAssetsWithOptions(mediaFetchOptions)
+    }()
     public var selectedAssets: [PHAsset]?
 
     // Private vars
@@ -40,6 +47,7 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
 
         imageManager = PHCachingImageManager()
         resetCachedAssets()
+
         collectionView?.allowsSelection = true
         collectionView?.allowsMultipleSelection = true
 
@@ -51,10 +59,33 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
                 self.assetBundle = bundle
             }
         }
+        
+        
     }
 
     deinit {
         PHPhotoLibrary.sharedPhotoLibrary().unregisterChangeObserver(self)
+    }
+    
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let config = SimpleAssetPickerConfig.sharedConfig()
+
+        // Configure contentInset, scrollIndicatorInset, and flowLayout properties for collectionView.
+        if let edgeInsets = config.collectionViewEdgeInsets,let numberOfItemsPerRow = config.numberOfItemsPerRow {
+            self.collectionView?.contentInset = edgeInsets
+            self.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: edgeInsets.top, left: 0, bottom: 0, right: 0)
+
+            let screenWidth = UIScreen.mainScreen().bounds.width
+            let horizontalSections = numberOfItemsPerRow + 1
+            let cellWidth = floor((screenWidth - (CGFloat(horizontalSections) * (edgeInsets.left)) ) / CGFloat(numberOfItemsPerRow))
+
+            if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
+                flowLayout.minimumLineSpacing = CGFloat(config.verticalCellSpacing ?? 0.0)
+                flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+            }
+        }
     }
 
     override public func viewWillAppear(animated: Bool) {
@@ -65,23 +96,13 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
         let config = SimpleAssetPickerConfig.sharedConfig()
 
         // Determine the size of the thumbnails to request from the PHCachingImageManager
-        if let edgeInsets = config.collectionViewEdgeInsets {
-            self.collectionView?.contentInset = edgeInsets
-
-            if let numberOfItemsPerRow = config.numberOfItemsPerRow {
-                let screenWidth = UIScreen.mainScreen().bounds.width
-                let horizontalSections = numberOfItemsPerRow + 1
-                let cellWidth = floor((screenWidth - (CGFloat(horizontalSections) * (edgeInsets.left)) ) / CGFloat(numberOfItemsPerRow))
-
-                if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.minimumLineSpacing = CGFloat(config.verticalCellSpacing ?? 0.0)
-                    let cellSize = CGSize(width: cellWidth, height: cellWidth)
-                    flowLayout.itemSize = cellSize
-
-                    let scale = UIScreen.mainScreen().scale
-                    AssetGridThumbnailSize = CGSize(width: cellSize.width * 2.0, height: cellSize.height * 2.0)
-                }
-            }
+        if let edgeInsets = config.collectionViewEdgeInsets, let numberOfItemsPerRow = config.numberOfItemsPerRow {
+            let screenWidth = UIScreen.mainScreen().bounds.width
+            let horizontalSections = numberOfItemsPerRow + 1
+            let cellWidth = floor((screenWidth - (CGFloat(horizontalSections) * (edgeInsets.left)) ) / CGFloat(numberOfItemsPerRow))
+            let cellSize = CGSize(width: cellWidth, height: cellWidth)
+            let scale = UIScreen.mainScreen().scale
+            AssetGridThumbnailSize = CGSize(width: cellSize.width * 2.0, height: cellSize.height * 2.0)
         }
     }
 
@@ -95,8 +116,7 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
     // MARK: - Public methods
     public func setAppearanceConfig(config: SimpleAssetPickerConfig)  {
         let appearanceConfig = SimpleAssetPickerConfig.sharedConfig()
-        appearanceConfig.maxPhotoSelectionAmount = config.maxPhotoSelectionAmount
-        appearanceConfig.maxVideoSelectionAmount = config.maxVideoSelectionAmount
+        appearanceConfig.minMediaSelectionAmount = config.minMediaSelectionAmount
         appearanceConfig.maxMediaSelectionAmount = config.maxMediaSelectionAmount
         appearanceConfig.numberOfItemsPerRow = config.numberOfItemsPerRow
         appearanceConfig.pickerMediaType = config.pickerMediaType
@@ -122,16 +142,6 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(AssetCollectionCellReuseIdentifier, forIndexPath: indexPath) as? AssetCollectionViewCell {
             cell.representedAssetIdentifier = asset.localIdentifier
 
-            // Add a badge to the cell if the PHAsset represents a Live Photo.
-            if #available(iOS 9.1, *) {
-                if asset.mediaSubtypes == PHAssetMediaSubtype.PhotoLive {
-                    let badge = PHLivePhotoView.livePhotoBadgeImageWithOptions(.OverContent)
-                    cell.livePhotoBadgeImageView.image = badge
-                }
-            } else {
-                // Fallback on earlier versions
-            }
-
             // Load icon assets from Bundle.
             if let bundle = self.assetBundle {
                 let checkMarkImage = UIImage.imageInBundle(bundle, named: SimpleAssetPickerConfig.sharedConfig().assetSelectedImageName!)
@@ -141,15 +151,30 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
                 cell.cameraIconImageView.image = cameraImage
             }
 
-            // Hide Video-only UI.
+            // Initial cell config.
+            cell.livePhotoBadgeImageView.hidden = true
             cell.cameraIconImageView.hidden = true
             cell.videoLengthLabel.hidden = true
             cell.gradientView.hidden = true
+
+            // Show UI for Video asset.
             if asset.mediaType == .Video {
                 cell.cameraIconImageView.hidden = false
                 cell.videoLengthLabel.hidden = false
                 cell.gradientView.hidden = false
                 cell.videoLengthLabel.text = cell.getTimeStringOfTimeInterval(asset.duration)
+            }
+
+            // Show UI for Live Photo asset.
+            if #available(iOS 9.1, *) {
+                if asset.mediaSubtypes == PHAssetMediaSubtype.PhotoLive {
+                    let badge = PHLivePhotoView.livePhotoBadgeImageWithOptions(.OverContent)
+                    cell.livePhotoBadgeImageView.image = badge
+                    cell.livePhotoBadgeImageView.hidden = false
+                    cell.gradientView.hidden = false
+                }
+            } else {
+                // Fallback on earlier versions
             }
 
             // Request an image for the asset from the PHCachingImageManager.
@@ -201,7 +226,7 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
     // MARK: Media selection
     func updateSelectedAssetsWithIndexPaths(indexPaths: [NSIndexPath]) {
         let config = SimpleAssetPickerConfig.sharedConfig()
-        if indexPaths.count > 0 && indexPaths.count <= config.maxMediaSelectionAmount {
+        if indexPaths.count >= config.minMediaSelectionAmount && indexPaths.count <= config.maxMediaSelectionAmount {
             print("Meets requirements \(indexPaths.count)")
             var assets = [PHAsset]()
             for indexPath in indexPaths {

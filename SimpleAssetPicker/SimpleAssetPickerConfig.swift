@@ -14,14 +14,24 @@ public enum SimpleAssetPickerMediaType: Int {
     case Image  = 1
     case Video  = 2
     case Audio  = 3
+    
+    public var description: String {
+        get {
+            switch(self) {
+            case Any:   return "All media"
+            case Image: return "Photos"
+            case Video: return "Videos"
+            case Audio: return "Audio"
+            }
+        }
+    }
 }
 
 public class SimpleAssetPickerConfig: NSObject {
     private static var instance: SimpleAssetPickerConfig!
 
     // Asset selection constraints
-    var maxVideoSelectionAmount: Int?
-    var maxPhotoSelectionAmount: Int?
+    var minMediaSelectionAmount: Int?
     var maxMediaSelectionAmount: Int?
 
     // Appearance config variables
@@ -42,8 +52,7 @@ public class SimpleAssetPickerConfig: NSObject {
 
     // Default values
     override init() {
-        self.maxVideoSelectionAmount = 0
-        self.maxPhotoSelectionAmount = 3
+        self.minMediaSelectionAmount = 1
         self.maxMediaSelectionAmount = 3
         self.numberOfItemsPerRow = 3
         self.pickerMediaType = .Any
