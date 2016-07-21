@@ -59,14 +59,12 @@ public class SimpleAssetPickerViewController: UICollectionViewController {
                 self.assetBundle = bundle
             }
         }
-        
-        
     }
 
     deinit {
         PHPhotoLibrary.sharedPhotoLibrary().unregisterChangeObserver(self)
     }
-    
+
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
