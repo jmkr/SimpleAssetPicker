@@ -170,8 +170,6 @@ public class SimpleAssetPickerViewController: UIViewController {
         appearanceConfig.numberOfItemsPerRow = config.numberOfItemsPerRow
         appearanceConfig.pickerMediaType = config.pickerMediaType
         appearanceConfig.assetSelectedImageName = config.assetSelectedImageName
-        appearanceConfig.initialSelectionBtnColor = config.initialSelectionBtnColor
-        appearanceConfig.finishedSelectionBtnColor = config.finishedSelectionBtnColor
         appearanceConfig.cellSize = config.cellSize
         appearanceConfig.collectionViewEdgeInsets = config.collectionViewEdgeInsets
         appearanceConfig.verticalCellSpacing = config.verticalCellSpacing

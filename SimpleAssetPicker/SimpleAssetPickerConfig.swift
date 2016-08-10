@@ -38,8 +38,6 @@ public class SimpleAssetPickerConfig: NSObject {
     public var numberOfItemsPerRow: Int?
     public var pickerMediaType: SimpleAssetPickerMediaType?
     public var assetSelectedImageName: String?
-    public var initialSelectionBtnColor: UIColor?
-    public var finishedSelectionBtnColor: UIColor?
     public var cellSize: CGSize?
     public var collectionViewEdgeInsets: UIEdgeInsets?
     public var verticalCellSpacing: Float?
@@ -57,8 +55,6 @@ public class SimpleAssetPickerConfig: NSObject {
         self.numberOfItemsPerRow = 3
         self.pickerMediaType = .Any
         self.assetSelectedImageName = "thumb-check"
-        self.initialSelectionBtnColor = UIColor.grayColor()
-        self.finishedSelectionBtnColor = UIColor.blackColor()
         self.cellSize = CGSize(width: 120.0, height: 120.0)
         self.collectionViewEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         self.verticalCellSpacing = 10.0
