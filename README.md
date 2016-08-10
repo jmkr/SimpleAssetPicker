@@ -3,14 +3,14 @@
 SimpleAssetPicker is a modern Swift library that lets users browse and select media assets from their Photo library. It is built using the Photos framework and is highly customizable to match the theme of your app.
 
 # Installation
-```
+```swift
 platform :ios, '8.0'
 pod 'SimpleAssetPicker'
 ```
 
 # Using in your project
 In any view controller you can start by adding:
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -24,8 +24,8 @@ override func viewDidLoad() {
 ```
 
 # SimpleAssetPickerDelegate
-Use these to customize your UI, show/hide buttons, etc
-```
+Use these protocol methods to handle events sent from SimpleAssetPicker:
+```swift
 func didCancel(picker: SimpleAssetPickerViewController)
 func didSatisfyMediaRequirements(picker: SimpleAssetPickerViewController, assets: [PHAsset]?)
 func didBreakMediaRequirements(picker: SimpleAssetPickerViewController)
