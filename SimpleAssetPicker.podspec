@@ -24,9 +24,12 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "Stupid simple iOS asset picker UI."
-  # s.description  = <<-DESC
-  #                  DESC
+  s.description  = <<-DESC
+                    SimpleAssetPicker is a modern Swift library that lets users
+                    browse and select media assets from their Photo library. It
+                    is built using the Photos framework and is highly customizable
+                    to match the theme of your app.
+                    DESC
 
   s.homepage     = "https://github.com/jmkr/SimpleAssetPicker.git"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -54,18 +57,14 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "John Meeker" => "jmeeker516@gmail.com" }
-  # Or just: s.author    = "John Meeker"
-  # s.authors            = { "John Meeker" => "jmeeker516@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/meekr5"
+  s.social_media_url   = "http://twitter.com/meekr5"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If this Pod runs only on iOS or OS X, then specify the platform and
   #  the deployment target. You can optionally include the target after the platform.
   #
-
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -122,7 +121,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "Photos"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -138,6 +137,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.dependency 'PureLayout', '~> 3.0.0'
 
 end

@@ -8,22 +8,36 @@
 
 import UIKit
 
-@IBDesignable class GradientView: UIView {
+class GradientView: UIView {
     
     //1 - the properties for the gradient
-    @IBInspectable var startColor: UIColor = UIColor.blackColor()
-    @IBInspectable var endColor: UIColor = UIColor.clearColor()
+    var startColor: UIColor = UIColor.blackColor()
+    var endColor: UIColor = UIColor.clearColor()
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+
+    private func commonInit() {
+        self.backgroundColor = .clearColor()
+    }
+
     override func drawRect(rect: CGRect) {
-        
+
         //2 - get the current context
         let context = UIGraphicsGetCurrentContext()
-        let colors = [startColor.CGColor, endColor.CGColor]
-        
+
         //3 - set up the color space
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
         //4 - set up the color stops
+        let colors = [startColor.CGColor, endColor.CGColor]
         let colorLocations:[CGFloat] = [0.0, 0.9]
         
         //5 - create the gradient

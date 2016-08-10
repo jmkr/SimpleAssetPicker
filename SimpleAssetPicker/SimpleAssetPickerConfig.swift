@@ -31,18 +31,18 @@ public class SimpleAssetPickerConfig: NSObject {
     private static var instance: SimpleAssetPickerConfig!
 
     // Asset selection constraints
-    var minMediaSelectionAmount: Int?
-    var maxMediaSelectionAmount: Int?
+    public var minMediaSelectionAmount: Int?
+    public var maxMediaSelectionAmount: Int?
 
     // Appearance config variables
-    var numberOfItemsPerRow: Int?
+    public var numberOfItemsPerRow: Int?
     public var pickerMediaType: SimpleAssetPickerMediaType?
-    var assetSelectedImageName: String?
-    var initialSelectionBtnColor: UIColor?
-    var finishedSelectionBtnColor: UIColor?
-    var cellSize: CGSize?
-    var collectionViewEdgeInsets: UIEdgeInsets?
-    var verticalCellSpacing: Float?
+    public var assetSelectedImageName: String?
+    public var initialSelectionBtnColor: UIColor?
+    public var finishedSelectionBtnColor: UIColor?
+    public var cellSize: CGSize?
+    public var collectionViewEdgeInsets: UIEdgeInsets?
+    public var verticalCellSpacing: Float?
 
     // Shared Instance
     public class func sharedConfig() -> SimpleAssetPickerConfig {
