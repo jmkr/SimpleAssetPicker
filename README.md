@@ -23,9 +23,9 @@ override func viewDidLoad() {
     SimpleAssetPickerConfig.sharedConfig().pickerMediaType = .Video
     SimpleAssetPickerConfig.sharedConfig().maxMediaSelectionAmount = 1
 
-    self.simpleAssetPickerViewController = SimpleAssetPickerViewController()
-    self.simpleAssetPickerViewController?.delegate = self
-    self.view.addSubview(self.simpleAssetPickerViewController!.view)
+    let simpleAssetPickerViewController = SimpleAssetPickerViewController()
+    simpleAssetPickerViewController.delegate = self
+    self.view.addSubview(simpleAssetPickerViewController.view)
 }
 ```
 
