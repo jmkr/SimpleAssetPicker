@@ -1,0 +1,7 @@
+sudo: false
+language: swift
+xcode_project: SimpleAssetPicker.xcodeproj
+matrix:
+  include:
+    - xcode_sdk: iphonesimulator
+      xcode_scheme: SimpleAssetPicker
