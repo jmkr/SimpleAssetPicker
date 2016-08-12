@@ -158,12 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52FB68E51D14C10800C17E24 /* Build configuration list for PBXNativeTarget "SimpleAssetPicker" */;
 			buildPhases = (
-				E82CECBF4D884B9B19842861 /* 📦 Check Pods Manifest.lock */,
+				E82CECBF4D884B9B19842861 /* [CP] Check Pods Manifest.lock */,
 				52FB68D81D14C10800C17E24 /* Sources */,
 				52FB68D91D14C10800C17E24 /* Frameworks */,
 				52FB68DA1D14C10800C17E24 /* Headers */,
 				52FB68DB1D14C10800C17E24 /* Resources */,
-				27E758A7A95653BAB7FCCECA /* 📦 Copy Pods Resources */,
+				27E758A7A95653BAB7FCCECA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,14 +217,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27E758A7A95653BAB7FCCECA /* 📦 Copy Pods Resources */ = {
+		27E758A7A95653BAB7FCCECA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,14 +232,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleAssetPicker/Pods-SimpleAssetPicker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E82CECBF4D884B9B19842861 /* 📦 Check Pods Manifest.lock */ = {
+		E82CECBF4D884B9B19842861 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
