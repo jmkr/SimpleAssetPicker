@@ -7,39 +7,108 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E1B7D70DD51AF2D76629DB40F896503 /* Pods-SimpleAssetPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 498E041E09CFABFC9E0D5EF5E37A36DE /* Pods-SimpleAssetPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D520542B6C8B58428B2DD2B621657D32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		FD0599092C811C06F8754F6197424B6B /* Pods-SimpleAssetPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C290533DFFD134E162A4315043601A17 /* Pods-SimpleAssetPicker-dummy.m */; };
+		0FEC38977C607A6CB4517D5E87215AD8 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26AD66FEC196E153D1B003B91344F263 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */; };
+		292F4A26A931E7124F12ABD458FAF163 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		33CF000DEEE337F582344CCEA0F15D78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5456F414608F41BC1BEDE36128139DB1 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */; };
+		641499FE32044351C03C8187A020130E /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7256E1F1CDC4F50C6BA4FFCA5F7F99C6 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BA32A9454FBE322306522841A8B3E4F /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */; };
+		8641F0DB79102281E85E8E8EA2891C9A /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */; };
+		A1CEC8FD430FA7950F772CED653AAF17 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A276B5540A3AFC7F226B4848AA60734B /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B465E7577A281D3068BCA8BA6A7717F4 /* Pods-SimpleAssetPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 498E041E09CFABFC9E0D5EF5E37A36DE /* Pods-SimpleAssetPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4C2907A52AFC5B5A8B0711D9242524B /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA7B5B0218F82D6BA6A0F5A45E0097E8 /* Pods-SimpleAssetPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C290533DFFD134E162A4315043601A17 /* Pods-SimpleAssetPicker-dummy.m */; };
+		ED8C7B7DC8F1FD7212BB816F66F302C1 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6B12AFEFABC38F6DD536B3EECC883670 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87FE1C830CDA266E844521C1CC5D23E1;
+			remoteInfo = PureLayout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		102C0046689CF2F2F5CB232E3DE9A1EF /* Pods_SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		23A9141F8156A479F40AE08E715166C1 /* Pods-SimpleAssetPicker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleAssetPicker-acknowledgements.markdown"; sourceTree = "<group>"; };
+		249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PureLayout.modulemap; sourceTree = "<group>"; };
 		250F7D4F03569F9271365599A9DE766B /* Pods-SimpleAssetPicker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleAssetPicker-acknowledgements.plist"; sourceTree = "<group>"; };
+		256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		30C5F9EE2928DBA4BDA280CC670E53C4 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
 		498E041E09CFABFC9E0D5EF5E37A36DE /* Pods-SimpleAssetPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleAssetPicker-umbrella.h"; sourceTree = "<group>"; };
+		5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
 		722459CB0281A4E8CCF5FD16C2398030 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		81B9E731AF59111F9669A5246082CA98 /* Pods-SimpleAssetPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SimpleAssetPicker.modulemap"; sourceTree = "<group>"; };
 		87671154EFF632A654727E7741BEBB39 /* Pods-SimpleAssetPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleAssetPicker.release.xcconfig"; sourceTree = "<group>"; };
 		89A265D16052D881EBF2446EDE2B22D8 /* Pods-SimpleAssetPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleAssetPicker.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0DF11BC12F64915CA1DDD76F975BE96 /* Pods-SimpleAssetPicker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleAssetPicker-frameworks.sh"; sourceTree = "<group>"; };
+		AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		C290533DFFD134E162A4315043601A17 /* Pods-SimpleAssetPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleAssetPicker-dummy.m"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D7F1A46666EA0883C81525BB0FA72155 /* Pods-SimpleAssetPicker-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleAssetPicker-resources.sh"; sourceTree = "<group>"; };
+		D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		DA807229FE20889C86628388935C5438 /* Pods_SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC48A19E2AA264922693A9C30BC30743 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9EC014ACBEA7F3B313F92945CAD9A97E /* Frameworks */ = {
+		2DD00A9483656D60979DDDEAE96CD1B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D520542B6C8B58428B2DD2B621657D32 /* Foundation.framework in Frameworks */,
+				292F4A26A931E7124F12ABD458FAF163 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		655CF868247A2B8CA9D0738C56085530 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33CF000DEEE337F582344CCEA0F15D78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13A2151B439F335C5CE76C9B140472E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA807229FE20889C86628388935C5438 /* Pods_SimpleAssetPicker.framework */,
+				30C5F9EE2928DBA4BDA280CC670E53C4 /* PureLayout.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC48A19E2AA264922693A9C30BC30743 /* Info.plist */,
+				249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */,
+				01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */,
+				808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */,
+				6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */,
+				6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PureLayout";
+			sourceTree = "<group>";
+		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +130,35 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				EC1CB54198F5B3878A2DEE29EEE42EE4 /* Products */,
+				A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */,
+				13A2151B439F335C5CE76C9B140472E0 /* Products */,
 				6BE46FD5E319CEA33E82251A114B97F2 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		9C6F93A5AE4A9293598494393460DF93 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */,
+				3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */,
+				256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */,
+				D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */,
+				2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */,
+				62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */,
+				261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */,
+				AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */,
+				5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */,
+				2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F93A5AE4A9293598494393460DF93 /* PureLayout */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -72,14 +167,6 @@
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EC1CB54198F5B3878A2DEE29EEE42EE4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				102C0046689CF2F2F5CB232E3DE9A1EF /* Pods_SimpleAssetPicker.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F368830D006B79D3589AC78B15524F55 /* Pods-SimpleAssetPicker */ = {
@@ -103,32 +190,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0889FBB1728DF805F107440D0C047A4C /* Headers */ = {
+		C4A541898D19AAA559C7724C65670D25 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E1B7D70DD51AF2D76629DB40F896503 /* Pods-SimpleAssetPicker-umbrella.h in Headers */,
+				B465E7577A281D3068BCA8BA6A7717F4 /* Pods-SimpleAssetPicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE6DDD16C60EA374D818FE76C9B6C5A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				641499FE32044351C03C8187A020130E /* ALView+PureLayout.h in Headers */,
+				B4C2907A52AFC5B5A8B0711D9242524B /* NSArray+PureLayout.h in Headers */,
+				ED8C7B7DC8F1FD7212BB816F66F302C1 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				0FEC38977C607A6CB4517D5E87215AD8 /* PureLayout+Internal.h in Headers */,
+				7256E1F1CDC4F50C6BA4FFCA5F7F99C6 /* PureLayout-umbrella.h in Headers */,
+				A1CEC8FD430FA7950F772CED653AAF17 /* PureLayout.h in Headers */,
+				A276B5540A3AFC7F226B4848AA60734B /* PureLayoutDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1E051F77979977D4BBD08EF9EBC4322D /* Pods-SimpleAssetPicker */ = {
+		68DB7A1E78BAEC1975AB1AC28C9F2646 /* Pods-SimpleAssetPicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B83ED456E84943AA2030C795BDAF87DF /* Build configuration list for PBXNativeTarget "Pods-SimpleAssetPicker" */;
+			buildConfigurationList = 26F8829B9A8DE7322D632BB1CED72C5D /* Build configuration list for PBXNativeTarget "Pods-SimpleAssetPicker" */;
 			buildPhases = (
-				CBB3D74C0083B02B28B0F52B40A3621A /* Sources */,
-				9EC014ACBEA7F3B313F92945CAD9A97E /* Frameworks */,
-				0889FBB1728DF805F107440D0C047A4C /* Headers */,
+				9E07D18F0A7F16E19C95A1054214E1A9 /* Sources */,
+				655CF868247A2B8CA9D0738C56085530 /* Frameworks */,
+				C4A541898D19AAA559C7724C65670D25 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69CF89C3519A335C6B6ECA858C078EE7 /* PBXTargetDependency */,
+			);
+			name = "Pods-SimpleAssetPicker";
+			productName = "Pods-SimpleAssetPicker";
+			productReference = DA807229FE20889C86628388935C5438 /* Pods_SimpleAssetPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		87FE1C830CDA266E844521C1CC5D23E1 /* PureLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7CD256C277B9C41B917C7B2CF98E9D4 /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildPhases = (
+				D541FF4E700D0FAF87BBA28C2F48A715 /* Sources */,
+				2DD00A9483656D60979DDDEAE96CD1B2 /* Frameworks */,
+				DE6DDD16C60EA374D818FE76C9B6C5A6 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-SimpleAssetPicker";
-			productName = "Pods-SimpleAssetPicker";
-			productReference = 102C0046689CF2F2F5CB232E3DE9A1EF /* Pods_SimpleAssetPicker.framework */;
+			name = PureLayout;
+			productName = PureLayout;
+			productReference = 30C5F9EE2928DBA4BDA280CC670E53C4 /* PureLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -148,30 +267,51 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = EC1CB54198F5B3878A2DEE29EEE42EE4 /* Products */;
+			productRefGroup = 13A2151B439F335C5CE76C9B140472E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E051F77979977D4BBD08EF9EBC4322D /* Pods-SimpleAssetPicker */,
+				68DB7A1E78BAEC1975AB1AC28C9F2646 /* Pods-SimpleAssetPicker */,
+				87FE1C830CDA266E844521C1CC5D23E1 /* PureLayout */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CBB3D74C0083B02B28B0F52B40A3621A /* Sources */ = {
+		9E07D18F0A7F16E19C95A1054214E1A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD0599092C811C06F8754F6197424B6B /* Pods-SimpleAssetPicker-dummy.m in Sources */,
+				EA7B5B0218F82D6BA6A0F5A45E0097E8 /* Pods-SimpleAssetPicker-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D541FF4E700D0FAF87BBA28C2F48A715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8641F0DB79102281E85E8E8EA2891C9A /* ALView+PureLayout.m in Sources */,
+				26AD66FEC196E153D1B003B91344F263 /* NSArray+PureLayout.m in Sources */,
+				7BA32A9454FBE322306522841A8B3E4F /* NSLayoutConstraint+PureLayout.m in Sources */,
+				5456F414608F41BC1BEDE36128139DB1 /* PureLayout-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		69CF89C3519A335C6B6ECA858C078EE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureLayout;
+			target = 87FE1C830CDA266E844521C1CC5D23E1 /* PureLayout */;
+			targetProxy = 6B12AFEFABC38F6DD536B3EECC883670 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		3C6CBD12BEA2C9BFAE0A0915709FEA67 /* Release */ = {
+		3FFF8225F9711C34A6033521E6F5FE7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87671154EFF632A654727E7741BEBB39 /* Pods-SimpleAssetPicker.release.xcconfig */;
+			baseConfigurationReference = 01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -182,18 +322,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleAssetPicker/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleAssetPicker/Pods-SimpleAssetPicker.modulemap";
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleAssetPicker;
+				PRODUCT_NAME = PureLayout;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -244,6 +380,101 @@
 			};
 			name = Debug;
 		};
+		490249AE663F7B66E7B125DB0E0C886F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89A265D16052D881EBF2446EDE2B22D8 /* Pods-SimpleAssetPicker.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleAssetPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleAssetPicker/Pods-SimpleAssetPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleAssetPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7CA8A6C672EFCCBB53E9117935452238 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		91CDC4A0CFF9D8136FC6FC46870AD358 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87671154EFF632A654727E7741BEBB39 /* Pods-SimpleAssetPicker.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleAssetPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleAssetPicker/Pods-SimpleAssetPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleAssetPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -282,42 +513,18 @@
 			};
 			name = Release;
 		};
-		CCA984FE730F79824584E8F5C19EC769 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89A265D16052D881EBF2446EDE2B22D8 /* Pods-SimpleAssetPicker.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleAssetPicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleAssetPicker/Pods-SimpleAssetPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleAssetPicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		26F8829B9A8DE7322D632BB1CED72C5D /* Build configuration list for PBXNativeTarget "Pods-SimpleAssetPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490249AE663F7B66E7B125DB0E0C886F /* Debug */,
+				91CDC4A0CFF9D8136FC6FC46870AD358 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -327,11 +534,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B83ED456E84943AA2030C795BDAF87DF /* Build configuration list for PBXNativeTarget "Pods-SimpleAssetPicker" */ = {
+		B7CD256C277B9C41B917C7B2CF98E9D4 /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCA984FE730F79824584E8F5C19EC769 /* Debug */,
-				3C6CBD12BEA2C9BFAE0A0915709FEA67 /* Release */,
+				7CA8A6C672EFCCBB53E9117935452238 /* Debug */,
+				3FFF8225F9711C34A6033521E6F5FE7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,10 +9,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E051F77979977D4BBD08EF9EBC4322D</key>
+		<key>68DB7A1E78BAEC1975AB1AC28C9F2646</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87FE1C830CDA266E844521C1CC5D23E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

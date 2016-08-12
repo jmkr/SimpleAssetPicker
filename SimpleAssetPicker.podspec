@@ -138,10 +138,11 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  # s.dependency 'PureLayout', '~> 3.0.0'
-  s.subspec "PureLayout" do |ss|
-    ss.dependency "PureLayout", "~> 3.0.0"
-    ss.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/PureLayout"}
-  end
+  s.dependency 'PureLayout', '~> 3.0.0'
+
+  # s.subspec "PureLayout" do |ss|
+  #   ss.dependency "PureLayout", "~> 3.0.0"
+  #   ss.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/PureLayout"}
+  # end
 
 end
