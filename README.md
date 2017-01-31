@@ -9,7 +9,6 @@
 SimpleAssetPicker is a modern Swift library that encapsulates common Photo Library usage and lets you quickly add functionality to your app to enable browsing and selection of media assets. It is built using the Photos framework and is highly customizable to match the theme of your app.
 
 
-
 ![Demo Gif](https://www.meeker.io/assets/sapDemoGif.gif "SimpleAssetPicker Demo Gif")
 
 ## Installation
@@ -18,6 +17,9 @@ use_frameworks!
 platform :ios, '8.0'
 pod 'SimpleAssetPicker'
 ```
+
+## Example
+There's a sample project in the `Example` folder.
 
 ## Using in your project
 In any view controller you can start by adding:
