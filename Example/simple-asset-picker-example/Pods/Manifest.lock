@@ -1,0 +1,19 @@
+PODS:
+  - PureLayout (3.0.2)
+  - SimpleAssetPicker (0.2.0):
+    - PureLayout (~> 3.0.0)
+
+DEPENDENCIES:
+  - SimpleAssetPicker (from `../../`)
+
+EXTERNAL SOURCES:
+  SimpleAssetPicker:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SimpleAssetPicker: 77f3b0cb2fc7d0d130f774fb9fefafa5544b9f94
+
+PODFILE CHECKSUM: 87a067c5a4aee7c83c17508724d4ab717ffb7d19
+
+COCOAPODS: 1.1.1

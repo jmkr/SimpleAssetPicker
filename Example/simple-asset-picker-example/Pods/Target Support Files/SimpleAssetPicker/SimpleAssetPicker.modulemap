@@ -1,0 +1,6 @@
+framework module SimpleAssetPicker {
+  umbrella header "SimpleAssetPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

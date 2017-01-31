@@ -1,0 +1,935 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0043D2E2E85274E9DCC789297132E6BA /* SimpleAssetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 014860579B603EB6B986484AC2C2F6B0 /* SimpleAssetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00560A2FCBC2874BFB38D82921FB21A3 /* SimpleAssetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72949AFD7221520E7AC5A00CB0A8371A /* SimpleAssetPickerViewController.swift */; };
+		0071BBFF5A8BA61D64C2BE5CAC497B03 /* Pods-simple-asset-picker-example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70EB803024A806639FC3F45AD3DC01A4 /* Pods-simple-asset-picker-example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10D4654154FB7C7061114157BD01DED1 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9423859E125D49126202DB6E290B2 /* AssetCollectionViewCell.swift */; };
+		11DBCDA8F793C44D3271235654B27C81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */; };
+		150AC6517362963DBE2EAAD67AE7543C /* NSIndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D04D19FEBD8657D614527F18BF79156 /* NSIndexSet+Convenience.swift */; };
+		1A966006D4962DFCC6CDF3D196F8AE1F /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A0F909CC18C62140EC0C9A7778A9E71 /* SimpleAssetPicker.bundle */; };
+		3C0D90FCBE07F3279AEC9B98A095A6EC /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47303D343F485F36CDBA219A72A08727 /* CIImage+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB61195104B90BA19C75D0F6C5CBF74 /* CIImage+Convenience.swift */; };
+		49D60918E4693FD24368A13D8AD3C122 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A236E45033222037AEE86F8926BFEA0 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CF55A5DE9FD43E78B4FB217CD8A437F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D33F94815FB7E5AA7DE839790F1FA44 /* Photos.framework */; };
+		52B03EBF16F9BBA9A911F12DCA8975DA /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A8E6F2390013F549A6646FD4BA7E2A /* PureLayout.framework */; };
+		53DA55DF25C6C1B3AFF04D3B2089EC7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */; };
+		566DBB05A1E5878FC4D94D846F291040 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */; };
+		69720C45507C458FB5B099C4F2753846 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */; };
+		6F0159433B3A0E86B7E80702779057F0 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FDD9A418FD7D8BABC64428DF4F9845F /* Pods-simple-asset-picker-example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D42D647490F687C1190E730A8CCC7CC /* Pods-simple-asset-picker-example-dummy.m */; };
+		7A55EB150A5772FCA71445658C8513CE /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 346FC9CEE8F8405A26AC1D554ACF77CD /* SimpleAssetPicker.bundle */; };
+		7D40712581F9516B8B7FE41197CEE442 /* SimpleAssetPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6450DDBF5B47E343F1EFA671BB541401 /* SimpleAssetPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9493B0ECC4D0DB4B6C46CAE9751A4D6A /* SimpleAssetPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F593C3A696493753A7EF2142599A2 /* SimpleAssetPickerConfig.swift */; };
+		9F761054C2EC8EEF0ECCCC63310A1366 /* SimpleAssetPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE15F48685BCE4FB68E45766D9DF9C /* SimpleAssetPicker-dummy.m */; };
+		A974E0ED7D751C1FFDD8B7C1740FC5F8 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B96AAF10B6891774430CCFA5B052D425 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */; };
+		BC6B6F0F1BAC0F65E7D505207FB9C3CC /* UIImage+SAPAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BCEBEA8EA22408B886FDFFE1B4AFF /* UIImage+SAPAdditions.swift */; };
+		C7EC0D6E39C2E769903285A172E9CF28 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003145520F95473C7EAA7AF72E7701B3 /* GradientView.swift */; };
+		C847A1AFD71F7B95328E62C418CCE4C9 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */; };
+		D372FA12D39EAB813C25A4F789D8805A /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E34AC1714A09FC89FCD55D2C146E6A99 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6DE01F612D5361B2789BDA09E615E5C /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09A14DEC507035E6964BA694AA687C58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E56875DF7B17A2AB15A320ED98531D9C;
+			remoteInfo = PureLayout;
+		};
+		602BA056C80C3D17283DE57DEB7EA649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E56875DF7B17A2AB15A320ED98531D9C;
+			remoteInfo = PureLayout;
+		};
+		B41866C4A9919D0795FB766AC4BF6856 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27DABC2C358C56A4C729D4B9807A50C7;
+			remoteInfo = SimpleAssetPicker;
+		};
+		B5461DD360B5B0D7E59F53C7746CEBB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79DC8E8FE6A8D2AE64CF02B469A65AA1;
+			remoteInfo = "SimpleAssetPicker-SimpleAssetPicker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		003145520F95473C7EAA7AF72E7701B3 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		014860579B603EB6B986484AC2C2F6B0 /* SimpleAssetPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SimpleAssetPicker.h; sourceTree = "<group>"; };
+		01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
+		037FA1ADA1ACB9640BD3373BA12EB8C0 /* SimpleAssetPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SimpleAssetPicker.modulemap; sourceTree = "<group>"; };
+		0A0F909CC18C62140EC0C9A7778A9E71 /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = SimpleAssetPicker.bundle; sourceTree = "<group>"; };
+		0D04D19FEBD8657D614527F18BF79156 /* NSIndexSet+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Convenience.swift"; sourceTree = "<group>"; };
+		249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PureLayout.modulemap; sourceTree = "<group>"; };
+		256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		28BAAFD20A051FF5C8727E07FF2196A4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DB2AC35F4B4E27A97766EFD6E34342D /* Pods-simple-asset-picker-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-simple-asset-picker-example.modulemap"; sourceTree = "<group>"; };
+		2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		30274682FAB8E68A88DF1079E4B41C06 /* ResourceBundle-SimpleAssetPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SimpleAssetPicker-Info.plist"; sourceTree = "<group>"; };
+		31C0AD8EBC28951E0A6848B60D6208E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335ACABAB593255001251F34CF63AFC8 /* Pods-simple-asset-picker-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-simple-asset-picker-example.release.xcconfig"; sourceTree = "<group>"; };
+		346FC9CEE8F8405A26AC1D554ACF77CD /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SimpleAssetPicker.bundle; path = SimpleAssetPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D42D647490F687C1190E730A8CCC7CC /* Pods-simple-asset-picker-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-simple-asset-picker-example-dummy.m"; sourceTree = "<group>"; };
+		3DB30EEC6732B81AA1DB3B75ADE06BBE /* Pods-simple-asset-picker-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-simple-asset-picker-example-acknowledgements.plist"; sourceTree = "<group>"; };
+		3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		6450DDBF5B47E343F1EFA671BB541401 /* SimpleAssetPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleAssetPicker-umbrella.h"; sourceTree = "<group>"; };
+		68CECDBDF6CD6BFC8C1E744CC457D10B /* Pods_simple_asset_picker_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_simple_asset_picker_example.framework; path = "Pods-simple-asset-picker-example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D33F94815FB7E5AA7DE839790F1FA44 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
+		6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		70EB803024A806639FC3F45AD3DC01A4 /* Pods-simple-asset-picker-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-simple-asset-picker-example-umbrella.h"; sourceTree = "<group>"; };
+		72949AFD7221520E7AC5A00CB0A8371A /* SimpleAssetPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerViewController.swift; sourceTree = "<group>"; };
+		808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		882163AEB6D3FA646908F897B46A7992 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		904A0AAEB96DFDD751C4765C2AD7E04C /* Pods-simple-asset-picker-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-simple-asset-picker-example.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97A8E6F2390013F549A6646FD4BA7E2A /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BB61195104B90BA19C75D0F6C5CBF74 /* CIImage+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CIImage+Convenience.swift"; sourceTree = "<group>"; };
+		9EAE15F48685BCE4FB68E45766D9DF9C /* SimpleAssetPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleAssetPicker-dummy.m"; sourceTree = "<group>"; };
+		AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		AACC621BC6ED9336C359FE6ED3296371 /* SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimpleAssetPicker.framework; path = SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimpleAssetPicker.xcconfig; sourceTree = "<group>"; };
+		C313C81514560F527297D1651EFCAAA7 /* Pods-simple-asset-picker-example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-simple-asset-picker-example-resources.sh"; sourceTree = "<group>"; };
+		C81F593C3A696493753A7EF2142599A2 /* SimpleAssetPickerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerConfig.swift; sourceTree = "<group>"; };
+		C9FD24738893FCF8771FE4AC18A1A486 /* SimpleAssetPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleAssetPicker-prefix.pch"; sourceTree = "<group>"; };
+		D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		DAF9423859E125D49126202DB6E290B2 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
+		DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DC48A19E2AA264922693A9C30BC30743 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9BCEBEA8EA22408B886FDFFE1B4AFF /* UIImage+SAPAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+SAPAdditions.swift"; sourceTree = "<group>"; };
+		ED4432A245702E00AFB89932E1100B33 /* Pods-simple-asset-picker-example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-simple-asset-picker-example-frameworks.sh"; sourceTree = "<group>"; };
+		F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		FFC92E9364ED9E6249656D4F7834DCF8 /* Pods-simple-asset-picker-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-simple-asset-picker-example-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17423512B7C0737872BBC6B5FCA7C798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53DA55DF25C6C1B3AFF04D3B2089EC7F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20DBF49D1C6D2610BF7D9DE68FEE9500 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DBCDA8F793C44D3271235654B27C81 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71171F99F479EC898186283557E10430 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DABF23B07740AE7C509E675A5C17B1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69720C45507C458FB5B099C4F2753846 /* Foundation.framework in Frameworks */,
+				4CF55A5DE9FD43E78B4FB217CD8A437F /* Photos.framework in Frameworks */,
+				52B03EBF16F9BBA9A911F12DCA8975DA /* PureLayout.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03957104EEB525D2F52985462F524EBB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E4F0F49A9687BD4E098FA935E536F62 /* Pods-simple-asset-picker-example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		179295F3E783AFA2ED458D058C0028DE /* SimpleAssetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DAF9423859E125D49126202DB6E290B2 /* AssetCollectionViewCell.swift */,
+				9BB61195104B90BA19C75D0F6C5CBF74 /* CIImage+Convenience.swift */,
+				003145520F95473C7EAA7AF72E7701B3 /* GradientView.swift */,
+				0D04D19FEBD8657D614527F18BF79156 /* NSIndexSet+Convenience.swift */,
+				014860579B603EB6B986484AC2C2F6B0 /* SimpleAssetPicker.h */,
+				C81F593C3A696493753A7EF2142599A2 /* SimpleAssetPickerConfig.swift */,
+				72949AFD7221520E7AC5A00CB0A8371A /* SimpleAssetPickerViewController.swift */,
+				EC9BCEBEA8EA22408B886FDFFE1B4AFF /* UIImage+SAPAdditions.swift */,
+			);
+			name = SimpleAssetPicker;
+			path = SimpleAssetPicker;
+			sourceTree = "<group>";
+		};
+		2747F7B9C70D76B973189EE28422D7D4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				28BAAFD20A051FF5C8727E07FF2196A4 /* Info.plist */,
+				30274682FAB8E68A88DF1079E4B41C06 /* ResourceBundle-SimpleAssetPicker-Info.plist */,
+				037FA1ADA1ACB9640BD3373BA12EB8C0 /* SimpleAssetPicker.modulemap */,
+				B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */,
+				9EAE15F48685BCE4FB68E45766D9DF9C /* SimpleAssetPicker-dummy.m */,
+				C9FD24738893FCF8771FE4AC18A1A486 /* SimpleAssetPicker-prefix.pch */,
+				6450DDBF5B47E343F1EFA671BB541401 /* SimpleAssetPicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/simple-asset-picker-example/Pods/Target Support Files/SimpleAssetPicker";
+			sourceTree = "<group>";
+		};
+		2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC48A19E2AA264922693A9C30BC30743 /* Info.plist */,
+				249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */,
+				01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */,
+				808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */,
+				6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */,
+				6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PureLayout";
+			sourceTree = "<group>";
+		};
+		3F474BF32BE01DCF3F85A7E136DB6C99 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E7C565853F173DC2052AF7C58E528B7 /* SimpleAssetPicker */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		70EAFA6A134611B662682D17EE4FBAED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68CECDBDF6CD6BFC8C1E744CC457D10B /* Pods_simple_asset_picker_example.framework */,
+				882163AEB6D3FA646908F897B46A7992 /* PureLayout.framework */,
+				346FC9CEE8F8405A26AC1D554ACF77CD /* SimpleAssetPicker.bundle */,
+				AACC621BC6ED9336C359FE6ED3296371 /* SimpleAssetPicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7659DEA5DD765501CCA59F5C98B9B394 /* SimpleAssetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0A0F909CC18C62140EC0C9A7778A9E71 /* SimpleAssetPicker.bundle */,
+			);
+			name = SimpleAssetPicker;
+			path = SimpleAssetPicker;
+			sourceTree = "<group>";
+		};
+		7B8692115B83CF0603FBB14AC029C28F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97A8E6F2390013F549A6646FD4BA7E2A /* PureLayout.framework */,
+				B4DAC2E55DAD05BD2CB3CD54011ABF1B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3F474BF32BE01DCF3F85A7E136DB6C99 /* Development Pods */,
+				7B8692115B83CF0603FBB14AC029C28F /* Frameworks */,
+				A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */,
+				70EAFA6A134611B662682D17EE4FBAED /* Products */,
+				03957104EEB525D2F52985462F524EBB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E4F0F49A9687BD4E098FA935E536F62 /* Pods-simple-asset-picker-example */ = {
+			isa = PBXGroup;
+			children = (
+				31C0AD8EBC28951E0A6848B60D6208E8 /* Info.plist */,
+				2DB2AC35F4B4E27A97766EFD6E34342D /* Pods-simple-asset-picker-example.modulemap */,
+				FFC92E9364ED9E6249656D4F7834DCF8 /* Pods-simple-asset-picker-example-acknowledgements.markdown */,
+				3DB30EEC6732B81AA1DB3B75ADE06BBE /* Pods-simple-asset-picker-example-acknowledgements.plist */,
+				3D42D647490F687C1190E730A8CCC7CC /* Pods-simple-asset-picker-example-dummy.m */,
+				ED4432A245702E00AFB89932E1100B33 /* Pods-simple-asset-picker-example-frameworks.sh */,
+				C313C81514560F527297D1651EFCAAA7 /* Pods-simple-asset-picker-example-resources.sh */,
+				70EB803024A806639FC3F45AD3DC01A4 /* Pods-simple-asset-picker-example-umbrella.h */,
+				904A0AAEB96DFDD751C4765C2AD7E04C /* Pods-simple-asset-picker-example.debug.xcconfig */,
+				335ACABAB593255001251F34CF63AFC8 /* Pods-simple-asset-picker-example.release.xcconfig */,
+			);
+			name = "Pods-simple-asset-picker-example";
+			path = "Target Support Files/Pods-simple-asset-picker-example";
+			sourceTree = "<group>";
+		};
+		7E7C565853F173DC2052AF7C58E528B7 /* SimpleAssetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A75A72529DEED10A4F8120E139256E2B /* Resources */,
+				179295F3E783AFA2ED458D058C0028DE /* SimpleAssetPicker */,
+				2747F7B9C70D76B973189EE28422D7D4 /* Support Files */,
+			);
+			name = SimpleAssetPicker;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		9C6F93A5AE4A9293598494393460DF93 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */,
+				3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */,
+				256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */,
+				D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */,
+				2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */,
+				62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */,
+				261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */,
+				AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */,
+				5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */,
+				2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */,
+			);
+			name = PureLayout;
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F93A5AE4A9293598494393460DF93 /* PureLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A75A72529DEED10A4F8120E139256E2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7659DEA5DD765501CCA59F5C98B9B394 /* SimpleAssetPicker */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B4DAC2E55DAD05BD2CB3CD54011ABF1B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */,
+				6D33F94815FB7E5AA7DE839790F1FA44 /* Photos.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0574B8E7058E695CB954AB9D8AC109EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F0159433B3A0E86B7E80702779057F0 /* ALView+PureLayout.h in Headers */,
+				3C0D90FCBE07F3279AEC9B98A095A6EC /* NSArray+PureLayout.h in Headers */,
+				E34AC1714A09FC89FCD55D2C146E6A99 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				4A236E45033222037AEE86F8926BFEA0 /* PureLayout+Internal.h in Headers */,
+				D372FA12D39EAB813C25A4F789D8805A /* PureLayout-umbrella.h in Headers */,
+				A974E0ED7D751C1FFDD8B7C1740FC5F8 /* PureLayout.h in Headers */,
+				49D60918E4693FD24368A13D8AD3C122 /* PureLayoutDefines.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78AE1365E60E40933B14C2048BB4B275 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0071BBFF5A8BA61D64C2BE5CAC497B03 /* Pods-simple-asset-picker-example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBED1D1466D66CDAECC95309012E8ED2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D40712581F9516B8B7FE41197CEE442 /* SimpleAssetPicker-umbrella.h in Headers */,
+				0043D2E2E85274E9DCC789297132E6BA /* SimpleAssetPicker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		27DABC2C358C56A4C729D4B9807A50C7 /* SimpleAssetPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 747CCE66221B5F9B0AF26F472843977C /* Build configuration list for PBXNativeTarget "SimpleAssetPicker" */;
+			buildPhases = (
+				1B0601AEEC2CF4F56B27BA6D14DE2D25 /* Sources */,
+				DABF23B07740AE7C509E675A5C17B1A1 /* Frameworks */,
+				CA0A748677000E28159091D14D9E4F62 /* Resources */,
+				DBED1D1466D66CDAECC95309012E8ED2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB2EF4AFA126A0447FF9144970BD5F34 /* PBXTargetDependency */,
+				2E423E7ECDFB4F4BB58EFF8470AFC0B1 /* PBXTargetDependency */,
+			);
+			name = SimpleAssetPicker;
+			productName = SimpleAssetPicker;
+			productReference = AACC621BC6ED9336C359FE6ED3296371 /* SimpleAssetPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7189690737CFB2974B8736071A4B86F3 /* Pods-simple-asset-picker-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7648E2D4B2C29CCA9E443CD4D72A7C59 /* Build configuration list for PBXNativeTarget "Pods-simple-asset-picker-example" */;
+			buildPhases = (
+				014ABB19CEA5839E3DEED0447F944487 /* Sources */,
+				17423512B7C0737872BBC6B5FCA7C798 /* Frameworks */,
+				78AE1365E60E40933B14C2048BB4B275 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3025C7BC27BD85872A5252E2D798EEF /* PBXTargetDependency */,
+				405BD69312F46F3FD3298291C7C70C35 /* PBXTargetDependency */,
+			);
+			name = "Pods-simple-asset-picker-example";
+			productName = "Pods-simple-asset-picker-example";
+			productReference = 68CECDBDF6CD6BFC8C1E744CC457D10B /* Pods_simple_asset_picker_example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		79DC8E8FE6A8D2AE64CF02B469A65AA1 /* SimpleAssetPicker-SimpleAssetPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 722C7407F1710CBBCEB50FA881B04C83 /* Build configuration list for PBXNativeTarget "SimpleAssetPicker-SimpleAssetPicker" */;
+			buildPhases = (
+				CC67DC569AD71BD67BC005BA78F1DCEA /* Sources */,
+				71171F99F479EC898186283557E10430 /* Frameworks */,
+				6BA8516AF8193A94B1F22683BF3BC7CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleAssetPicker-SimpleAssetPicker";
+			productName = "SimpleAssetPicker-SimpleAssetPicker";
+			productReference = 346FC9CEE8F8405A26AC1D554ACF77CD /* SimpleAssetPicker.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E56875DF7B17A2AB15A320ED98531D9C /* PureLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 447272FAB4BCA2CAB9C0F0CB68C3BEDC /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildPhases = (
+				8E513BB9658564591C79B0155DFF6087 /* Sources */,
+				20DBF49D1C6D2610BF7D9DE68FEE9500 /* Frameworks */,
+				0574B8E7058E695CB954AB9D8AC109EF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PureLayout;
+			productName = PureLayout;
+			productReference = 882163AEB6D3FA646908F897B46A7992 /* PureLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 70EAFA6A134611B662682D17EE4FBAED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7189690737CFB2974B8736071A4B86F3 /* Pods-simple-asset-picker-example */,
+				E56875DF7B17A2AB15A320ED98531D9C /* PureLayout */,
+				27DABC2C358C56A4C729D4B9807A50C7 /* SimpleAssetPicker */,
+				79DC8E8FE6A8D2AE64CF02B469A65AA1 /* SimpleAssetPicker-SimpleAssetPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6BA8516AF8193A94B1F22683BF3BC7CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A966006D4962DFCC6CDF3D196F8AE1F /* SimpleAssetPicker.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA0A748677000E28159091D14D9E4F62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A55EB150A5772FCA71445658C8513CE /* SimpleAssetPicker.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		014ABB19CEA5839E3DEED0447F944487 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FDD9A418FD7D8BABC64428DF4F9845F /* Pods-simple-asset-picker-example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B0601AEEC2CF4F56B27BA6D14DE2D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D4654154FB7C7061114157BD01DED1 /* AssetCollectionViewCell.swift in Sources */,
+				47303D343F485F36CDBA219A72A08727 /* CIImage+Convenience.swift in Sources */,
+				C7EC0D6E39C2E769903285A172E9CF28 /* GradientView.swift in Sources */,
+				150AC6517362963DBE2EAAD67AE7543C /* NSIndexSet+Convenience.swift in Sources */,
+				9F761054C2EC8EEF0ECCCC63310A1366 /* SimpleAssetPicker-dummy.m in Sources */,
+				9493B0ECC4D0DB4B6C46CAE9751A4D6A /* SimpleAssetPickerConfig.swift in Sources */,
+				00560A2FCBC2874BFB38D82921FB21A3 /* SimpleAssetPickerViewController.swift in Sources */,
+				BC6B6F0F1BAC0F65E7D505207FB9C3CC /* UIImage+SAPAdditions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E513BB9658564591C79B0155DFF6087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6DE01F612D5361B2789BDA09E615E5C /* ALView+PureLayout.m in Sources */,
+				C847A1AFD71F7B95328E62C418CCE4C9 /* NSArray+PureLayout.m in Sources */,
+				B96AAF10B6891774430CCFA5B052D425 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				566DBB05A1E5878FC4D94D846F291040 /* PureLayout-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC67DC569AD71BD67BC005BA78F1DCEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E423E7ECDFB4F4BB58EFF8470AFC0B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SimpleAssetPicker-SimpleAssetPicker";
+			target = 79DC8E8FE6A8D2AE64CF02B469A65AA1 /* SimpleAssetPicker-SimpleAssetPicker */;
+			targetProxy = B5461DD360B5B0D7E59F53C7746CEBB5 /* PBXContainerItemProxy */;
+		};
+		405BD69312F46F3FD3298291C7C70C35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SimpleAssetPicker;
+			target = 27DABC2C358C56A4C729D4B9807A50C7 /* SimpleAssetPicker */;
+			targetProxy = B41866C4A9919D0795FB766AC4BF6856 /* PBXContainerItemProxy */;
+		};
+		D3025C7BC27BD85872A5252E2D798EEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureLayout;
+			target = E56875DF7B17A2AB15A320ED98531D9C /* PureLayout */;
+			targetProxy = 09A14DEC507035E6964BA694AA687C58 /* PBXContainerItemProxy */;
+		};
+		FB2EF4AFA126A0447FF9144970BD5F34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureLayout;
+			target = E56875DF7B17A2AB15A320ED98531D9C /* PureLayout */;
+			targetProxy = 602BA056C80C3D17283DE57DEB7EA649 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4CF64D4C4A0D1DE3BDC9E2347C292D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SimpleAssetPicker/SimpleAssetPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimpleAssetPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SimpleAssetPicker/SimpleAssetPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SimpleAssetPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75E0B138126CCF91AED7175D92503685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		807A8D0C146045440DA0FEEB720DF848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SimpleAssetPicker";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/SimpleAssetPicker/ResourceBundle-SimpleAssetPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = SimpleAssetPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		9605396278750AD7D39075119BDC9DF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SimpleAssetPicker/SimpleAssetPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimpleAssetPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SimpleAssetPicker/SimpleAssetPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SimpleAssetPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		96E7029E310EF5B7B748B891EDE19FF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 335ACABAB593255001251F34CF63AFC8 /* Pods-simple-asset-picker-example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-simple-asset-picker-example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-simple-asset-picker-example/Pods-simple-asset-picker-example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_simple_asset_picker_example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		988BDF1E035197AD5AA99736770849B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9CE572187EE8217CED2D28EE9BFF5CC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904A0AAEB96DFDD751C4765C2AD7E04C /* Pods-simple-asset-picker-example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-simple-asset-picker-example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-simple-asset-picker-example/Pods-simple-asset-picker-example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_simple_asset_picker_example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BE74F3137C1D1F04B12027E662B1D4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SimpleAssetPicker";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/SimpleAssetPicker/ResourceBundle-SimpleAssetPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = SimpleAssetPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		447272FAB4BCA2CAB9C0F0CB68C3BEDC /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				988BDF1E035197AD5AA99736770849B4 /* Debug */,
+				75E0B138126CCF91AED7175D92503685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		722C7407F1710CBBCEB50FA881B04C83 /* Build configuration list for PBXNativeTarget "SimpleAssetPicker-SimpleAssetPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE74F3137C1D1F04B12027E662B1D4BA /* Debug */,
+				807A8D0C146045440DA0FEEB720DF848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		747CCE66221B5F9B0AF26F472843977C /* Build configuration list for PBXNativeTarget "SimpleAssetPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CF64D4C4A0D1DE3BDC9E2347C292D02 /* Debug */,
+				9605396278750AD7D39075119BDC9DF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7648E2D4B2C29CCA9E443CD4D72A7C59 /* Build configuration list for PBXNativeTarget "Pods-simple-asset-picker-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CE572187EE8217CED2D28EE9BFF5CC2 /* Debug */,
+				96E7029E310EF5B7B748B891EDE19FF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
