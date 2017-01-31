@@ -4,7 +4,13 @@
 [![Build Status](https://travis-ci.org/jmkr/SimpleAssetPicker.svg?branch=master)](https://travis-ci.org/jmkr/SimpleAssetPicker) 
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SimpleAssetPicker.svg)](https://cocoapods.org/pods/SimpleAssetPicker)
 
+
+
 SimpleAssetPicker is a modern Swift library that lets users browse and select media assets from their Photo library. It is built using the Photos framework and is highly customizable to match the theme of your app.
+
+
+
+![Demo Gif](https://www.meeker.io/assets/sapDemoGif.gif "SimpleAssetPicker Demo Gif")
 
 ## Installation
 ```swift
