@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SimpleAssetPicker"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Stupid simple iOS asset picker UI."
 
   # This description is used to generate tags and improve search results.
