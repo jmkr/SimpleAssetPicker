@@ -9,11 +9,11 @@
 import UIKit
 
 extension CIImage {
-    public func aapl_jpegRepresentationWithCompressionQuality(compressionQuality: CGFloat) -> NSData {
-        let eaglContext = EAGLContext(API: .OpenGLES2)
-        let ciContext = CIContext(EAGLContext: eaglContext)
-        let outputImageRef = ciContext.createCGImage(self, fromRect: self.extent)
-        let uiImage = UIImage(CGImage: outputImageRef, scale: 1.0, orientation: .Up)
+    public func aapl_jpegRepresentationWithCompressionQuality(_ compressionQuality: CGFloat) -> Data {
+        let eaglContext = EAGLContext(api: .openGLES2)
+        let ciContext = CIContext(eaglContext: eaglContext!)
+        let outputImageRef = ciContext.createCGImage(self, from: self.extent)
+        let uiImage = UIImage(cgImage: outputImageRef!, scale: 1.0, orientation: .up)
         let jpegRepresentation = UIImageJPEGRepresentation(uiImage, compressionQuality)
         return jpegRepresentation!
     }

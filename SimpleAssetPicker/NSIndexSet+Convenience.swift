@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension NSIndexSet {
-    public func aapl_indexPathsFromIndexesWithSection(section: Int) -> NSArray {
+extension IndexSet {
+    public func aapl_indexPathsFromIndexesWithSection(_ section: Int) -> NSArray {
         let indexPaths = NSMutableArray()
-        self.enumerateIndexesUsingBlock { (idx, stop) -> Void in
-            indexPaths.addObject(NSIndexPath(forItem: idx, inSection: section))
-        }
+        (self as NSIndexSet).enumerate({ (idx, stop) -> Void in
+            indexPaths.add(IndexPath(item: idx, section: section))
+        })
         return indexPaths
     }
 }

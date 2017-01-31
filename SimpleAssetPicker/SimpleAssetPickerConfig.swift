@@ -10,40 +10,40 @@ import Foundation
 import UIKit
 
 public enum SimpleAssetPickerMediaType: Int {
-    case Any    = -1
-    case Image  = 1
-    case Video  = 2
-    case Audio  = 3
+    case any    = -1
+    case image  = 1
+    case video  = 2
+    case audio  = 3
     
     public var description: String {
         get {
             switch(self) {
-            case Any:   return "All media"
-            case Image: return "Photos"
-            case Video: return "Videos"
-            case Audio: return "Audio"
+            case .any:   return "All media"
+            case .image: return "Photos"
+            case .video: return "Videos"
+            case .audio: return "Audio"
             }
         }
     }
 }
 
-public class SimpleAssetPickerConfig: NSObject {
-    private static var instance: SimpleAssetPickerConfig!
+open class SimpleAssetPickerConfig: NSObject {
+    fileprivate static var instance: SimpleAssetPickerConfig!
 
     // Asset selection constraints
-    public var minMediaSelectionAmount: Int?
-    public var maxMediaSelectionAmount: Int?
+    open var minMediaSelectionAmount: Int?
+    open var maxMediaSelectionAmount: Int?
 
     // Appearance config variables
-    public var numberOfItemsPerRow: Int?
-    public var pickerMediaType: SimpleAssetPickerMediaType?
-    public var assetSelectedImageName: String?
-    public var cellSize: CGSize?
-    public var collectionViewEdgeInsets: UIEdgeInsets?
-    public var verticalCellSpacing: Float?
+    open var numberOfItemsPerRow: Int?
+    open var pickerMediaType: SimpleAssetPickerMediaType?
+    open var assetSelectedImageName: String?
+    open var cellSize: CGSize?
+    open var collectionViewEdgeInsets: UIEdgeInsets?
+    open var verticalCellSpacing: Float?
 
     // Shared Instance
-    public class func sharedConfig() -> SimpleAssetPickerConfig {
+    open class func sharedConfig() -> SimpleAssetPickerConfig {
         self.instance = (self.instance ?? SimpleAssetPickerConfig())
         return self.instance
     }
@@ -53,7 +53,7 @@ public class SimpleAssetPickerConfig: NSObject {
         self.minMediaSelectionAmount = 1
         self.maxMediaSelectionAmount = 3
         self.numberOfItemsPerRow = 3
-        self.pickerMediaType = .Any
+        self.pickerMediaType = .any
         self.assetSelectedImageName = "thumb-check"
         self.cellSize = CGSize(width: 120.0, height: 120.0)
         self.collectionViewEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

@@ -11,8 +11,8 @@ import UIKit
 class GradientView: UIView {
     
     //1 - the properties for the gradient
-    var startColor: UIColor = UIColor.blackColor()
-    var endColor: UIColor = UIColor.clearColor()
+    var startColor: UIColor = UIColor.black
+    var endColor: UIColor = UIColor.clear
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,11 +24,11 @@ class GradientView: UIView {
         commonInit()
     }
 
-    private func commonInit() {
-        self.backgroundColor = .clearColor()
+    fileprivate func commonInit() {
+        self.backgroundColor = .clear
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         //2 - get the current context
         let context = UIGraphicsGetCurrentContext()
@@ -37,21 +37,20 @@ class GradientView: UIView {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
         //4 - set up the color stops
-        let colors = [startColor.CGColor, endColor.CGColor]
+        let colors = [startColor.cgColor, endColor.cgColor]
         let colorLocations:[CGFloat] = [0.0, 0.9]
         
         //5 - create the gradient
-        let gradient = CGGradientCreateWithColors(colorSpace,
-                                                  colors,
-                                                  colorLocations)
+        let gradient = CGGradient(colorsSpace: colorSpace,
+                                                  colors: colors as CFArray,
+                                                  locations: colorLocations)
         
         //6 - draw the gradient
         let startPoint = CGPoint(x:0, y:self.bounds.height)
         let endPoint = CGPoint(x:0, y:2)
-        CGContextDrawLinearGradient(context,
-                                    gradient,
-                                    startPoint,
-                                    endPoint,
-                                    CGGradientDrawingOptions(rawValue: 0))
+        context?.drawLinearGradient(gradient!,
+                                    start: startPoint,
+                                    end: endPoint,
+                                    options: CGGradientDrawingOptions(rawValue: 0))
     }
 }

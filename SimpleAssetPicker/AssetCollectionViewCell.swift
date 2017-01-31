@@ -12,36 +12,36 @@ import PureLayout
 class AssetCollectionViewCell: UICollectionViewCell {
     
     var representedAssetIdentifier: String = ""
-    private var didSetupConstraints: Bool = false
+    fileprivate var didSetupConstraints: Bool = false
 
     lazy var imageView: UIImageView! = {
-        let imageView = UIImageView.newAutoLayoutView()
-        imageView.contentMode = .ScaleAspectFill
+        let imageView = UIImageView.newAutoLayout()
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
     lazy var gradientView: GradientView! = {
-        return GradientView.newAutoLayoutView()
+        return GradientView.newAutoLayout()
     }()
 
     lazy var checkMarkImageView: UIImageView! = {
-        let imageView = UIImageView.newAutoLayoutView()
+        let imageView = UIImageView.newAutoLayout()
         imageView.alpha = 0.0
         return imageView
     }()
 
     lazy var livePhotoBadgeImageView: UIImageView! = {
-       return UIImageView.newAutoLayoutView()
+       return UIImageView.newAutoLayout()
     }()
 
     lazy var cameraIconImageView: UIImageView! = {
-        return UIImageView.newAutoLayoutView()
+        return UIImageView.newAutoLayout()
     }()
     
     lazy var videoLengthLabel: UILabel! = {
-        let label = UILabel.newAutoLayoutView()
-        label.textColor = .whiteColor()
-        label.font = UIFont.systemFontOfSize(13.0)
+        let label = UILabel.newAutoLayout()
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 13.0)
         return label
     }()
     
@@ -62,9 +62,9 @@ class AssetCollectionViewCell: UICollectionViewCell {
         updateConstraints()
     }
 
-    private func setupViews() {
+    fileprivate func setupViews() {
         self.clipsToBounds = true
-        self.backgroundColor = .whiteColor()
+        self.backgroundColor = .white
         self.addSubview(self.imageView)
         self.addSubview(self.gradientView)
         self.addSubview(self.checkMarkImageView)
@@ -73,33 +73,33 @@ class AssetCollectionViewCell: UICollectionViewCell {
         self.addSubview(self.videoLengthLabel)
     }
 
-    override var selected: Bool {
+    override var isSelected: Bool {
         get {
-            return super.selected
+            return super.isSelected
         }
         set {
             if newValue {
-                super.selected = true
+                super.isSelected = true
                 self.imageView.alpha = 0.6
 
-                UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseIn, .AllowUserInteraction], animations: { () -> Void in
-                    self.transform = CGAffineTransformMakeScale(0.98, 0.98)
+                UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseIn, .allowUserInteraction], animations: { () -> Void in
+                    self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
                     self.checkMarkImageView.alpha = 1.0
                     }, completion: { (finished) -> Void in
-                        UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseOut, .AllowUserInteraction], animations: { () -> Void in
-                            self.transform = CGAffineTransformIdentity
+                        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseOut, .allowUserInteraction], animations: { () -> Void in
+                            self.transform = CGAffineTransform.identity
                             }, completion:nil)
                 })
             } else if newValue == false {
-                super.selected = false
+                super.isSelected = false
                 self.imageView.alpha = 1.0
 
-                UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseIn, .AllowUserInteraction], animations: { () -> Void in
+                UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseIn, .allowUserInteraction], animations: { () -> Void in
                     //self.transform = CGAffineTransformMakeScale(1.02, 1.02)
                     self.checkMarkImageView.alpha = 0.0
                     }, completion: { (finished) -> Void in
-                        UIView.animateWithDuration(0.1, delay: 0.0, options: [.CurveEaseOut, .AllowUserInteraction], animations: { () -> Void in
-                            self.transform = CGAffineTransformIdentity
+                        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseOut, .allowUserInteraction], animations: { () -> Void in
+                            self.transform = CGAffineTransform.identity
                             }, completion:nil)
                 })
                 
@@ -111,23 +111,23 @@ class AssetCollectionViewCell: UICollectionViewCell {
         if !didSetupConstraints {
             self.imageView.autoPinEdgesToSuperviewEdges()
 
-            self.gradientView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Top)
-            self.gradientView.autoSetDimension(.Height, toSize: 30)
+            self.gradientView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets.zero, excludingEdge: .top)
+            self.gradientView.autoSetDimension(.height, toSize: 30)
 
-            self.checkMarkImageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 4)
-            self.checkMarkImageView.autoPinEdgeToSuperviewEdge(.Right, withInset: 4)
-            self.checkMarkImageView.autoSetDimensionsToSize(CGSize(width: 18, height: 18))
+            self.checkMarkImageView.autoPinEdge(toSuperviewEdge: .top, withInset: 4)
+            self.checkMarkImageView.autoPinEdge(toSuperviewEdge: .right, withInset: 4)
+            self.checkMarkImageView.autoSetDimensions(to: CGSize(width: 18, height: 18))
 
-            self.livePhotoBadgeImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 4)
-            self.livePhotoBadgeImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 4)
-            self.livePhotoBadgeImageView.autoSetDimensionsToSize(CGSize(width: 20, height: 20))
+            self.livePhotoBadgeImageView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 4)
+            self.livePhotoBadgeImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 4)
+            self.livePhotoBadgeImageView.autoSetDimensions(to: CGSize(width: 20, height: 20))
 
-            self.cameraIconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 4)
-            self.cameraIconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 4)
-            self.cameraIconImageView.autoSetDimensionsToSize(CGSize(width: 20, height: 17))
+            self.cameraIconImageView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 4)
+            self.cameraIconImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 4)
+            self.cameraIconImageView.autoSetDimensions(to: CGSize(width: 20, height: 17))
 
-            self.videoLengthLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 4)
-            self.videoLengthLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: 4)
+            self.videoLengthLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 4)
+            self.videoLengthLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 4)
 
             didSetupConstraints = true
         }
@@ -135,7 +135,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
         super.updateConstraints()
     }
 
-    func getTimeStringOfTimeInterval(timeInterval: NSTimeInterval) -> String {
+    func getTimeStringOfTimeInterval(_ timeInterval: TimeInterval) -> String {
         let ti = NSInteger(timeInterval)
         let seconds = ti % 60
         let minutes = (ti / 60) % 60
