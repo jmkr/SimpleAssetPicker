@@ -1,6 +1,6 @@
 language: objective-c
 
-osx_image: xcode8.3.3
+osx_image: xcode8.3
 
 branches:
  only:
@@ -9,7 +9,7 @@ branches:
 # install: make get-deps
 
 before_install:
- - gem install cocoapods # Since Travis is not always on latest version
+ - gem install cocoapods --pre # Since Travis is not always on latest version
  - pod install
 
 script:
