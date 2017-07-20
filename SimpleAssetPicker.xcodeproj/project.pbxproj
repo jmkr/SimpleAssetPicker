@@ -11,8 +11,7 @@
 		5217D98A1D25A47C004A6DED /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5217D9891D25A47C004A6DED /* SimpleAssetPicker.bundle */; };
 		526D65A41D19B0A100E8029C /* SimpleAssetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65A31D19B0A100E8029C /* SimpleAssetPickerViewController.swift */; };
 		526D65AA1D21876900E8029C /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65A91D21876900E8029C /* AssetCollectionViewCell.swift */; };
-		526D65AD1D2187D500E8029C /* NSIndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */; };
-		526D65AF1D21880900E8029C /* CIImage+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AE1D21880900E8029C /* CIImage+Convenience.swift */; };
+		526D65AD1D2187D500E8029C /* IndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65AC1D2187D500E8029C /* IndexSet+Convenience.swift */; };
 		526D65B11D21889E00E8029C /* SimpleAssetPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */; };
 		52A261E21D2B3CA30088E565 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A261E11D2B3CA30088E565 /* GradientView.swift */; };
 		52FB68E11D14C10800C17E24 /* SimpleAssetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 52FB68E01D14C10800C17E24 /* SimpleAssetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,8 +24,7 @@
 		5217D9891D25A47C004A6DED /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SimpleAssetPicker.bundle; sourceTree = "<group>"; };
 		526D65A31D19B0A100E8029C /* SimpleAssetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerViewController.swift; sourceTree = "<group>"; };
 		526D65A91D21876900E8029C /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
-		526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Convenience.swift"; sourceTree = "<group>"; };
-		526D65AE1D21880900E8029C /* CIImage+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage+Convenience.swift"; sourceTree = "<group>"; };
+		526D65AC1D2187D500E8029C /* IndexSet+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexSet+Convenience.swift"; sourceTree = "<group>"; };
 		526D65B01D21889E00E8029C /* SimpleAssetPickerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerConfig.swift; sourceTree = "<group>"; };
 		52A261E11D2B3CA30088E565 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		52FB68DD1D14C10800C17E24 /* SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +57,7 @@
 		526D65AB1D2187BF00E8029C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				526D65AC1D2187D500E8029C /* NSIndexSet+Convenience.swift */,
-				526D65AE1D21880900E8029C /* CIImage+Convenience.swift */,
+				526D65AC1D2187D500E8029C /* IndexSet+Convenience.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -256,10 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				526D65A41D19B0A100E8029C /* SimpleAssetPickerViewController.swift in Sources */,
-				526D65AF1D21880900E8029C /* CIImage+Convenience.swift in Sources */,
 				5217D9881D25A3AA004A6DED /* UIImage+SAPAdditions.swift in Sources */,
 				526D65B11D21889E00E8029C /* SimpleAssetPickerConfig.swift in Sources */,
-				526D65AD1D2187D500E8029C /* NSIndexSet+Convenience.swift in Sources */,
+				526D65AD1D2187D500E8029C /* IndexSet+Convenience.swift in Sources */,
 				526D65AA1D21876900E8029C /* AssetCollectionViewCell.swift in Sources */,
 				52A261E21D2B3CA30088E565 /* GradientView.swift in Sources */,
 			);

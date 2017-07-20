@@ -10,54 +10,8 @@ import UIKit
 import Photos
 import PhotosUI
 import PureLayout
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
 
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l >= r
-  default:
-    return !(lhs < rhs)
-  }
-}
-
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l <= r
-  default:
-    return !(rhs < lhs)
-  }
-}
-
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
-
-private var AssetCollectionCellReuseIdentifier = "AssetCollectionViewCell"
+private let AssetCollectionCellReuseIdentifier = "AssetCollectionViewCellIdentifier"
 
 public protocol SimpleAssetPickerDelegate: class {
     func didCancel(_ picker: SimpleAssetPickerViewController)
@@ -84,12 +38,32 @@ open class SimpleAssetPickerViewController: UIViewController {
     // Private vars
     fileprivate var imageManager: PHCachingImageManager?
     fileprivate var libraryAccessGranted: Bool = false
-    fileprivate var previousPreheatRect: CGRect? = CGRect.zero
-    fileprivate var AssetGridThumbnailSize = CGSize()
+    fileprivate var previousPreheatRect: CGRect = CGRect.zero
+    fileprivate var assetGridThumbnailSize = CGSize()
     fileprivate var assetBundle: Bundle?
-    fileprivate var collectionView: UICollectionView?
-    fileprivate var collectionViewLayout: UICollectionViewLayout?
     fileprivate var topConstraint: NSLayoutConstraint?
+    fileprivate lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        return UICollectionViewFlowLayout()
+        
+    }()
+    fileprivate lazy var collectionView: UICollectionView = {
+        let cv = UICollectionView(frame: self.view.frame, collectionViewLayout: self.collectionViewLayout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .white
+        cv.delegate   = self
+        cv.dataSource = self
+        cv.register(AssetCollectionViewCell.self, forCellWithReuseIdentifier: AssetCollectionCellReuseIdentifier)
+        cv.allowsSelection = true
+        cv.allowsMultipleSelection = true
+        self.view.addSubview(cv)
+        
+        self.topConstraint = cv.autoPinEdge(toSuperviewEdge: .top, withInset: 64)
+        cv.autoPinEdge(toSuperviewEdge: .bottom)
+        cv.autoPinEdge(toSuperviewEdge: .right)
+        cv.autoPinEdge(toSuperviewEdge: .left)
+        return cv
+    }()
+    
 
     public convenience init() {
         self.init(nibName: nil, bundle: nil)
@@ -111,9 +85,6 @@ open class SimpleAssetPickerViewController: UIViewController {
         requestPermissions { (granted) -> Void in
             if granted == true {
                 self.libraryAccessGranted = true
-                DispatchQueue.main.async {
-                    self.setupCollectionView()
-                }
                 self.imageManager = PHCachingImageManager()
                 self.resetCachedAssets()
                 PHPhotoLibrary.shared().register(self)
@@ -140,36 +111,33 @@ open class SimpleAssetPickerViewController: UIViewController {
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        if self.libraryAccessGranted == false { return }
+        if !libraryAccessGranted { return }
 
-        if let collectionView = self.collectionView {
-            let config = SimpleAssetPickerConfig.sharedConfig()
+        let config = SimpleAssetPickerConfig.sharedConfig()
 
-            // Configure contentInset, scrollIndicatorInset, and flowLayout properties for collectionView.
-            if let edgeInsets = config.collectionViewEdgeInsets, let numberOfItemsPerRow = config.numberOfItemsPerRow {
-                self.collectionView?.contentInset = edgeInsets
-                self.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        // Configure contentInset, scrollIndicatorInset, and flowLayout properties for collectionView.
+        if  let edgeInsets = config.collectionViewEdgeInsets,
+            let numberOfItemsPerRow = config.numberOfItemsPerRow {
+            collectionView.contentInset = edgeInsets
+            collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
-                let screenWidth = UIScreen.main.bounds.width
-                let horizontalSections = numberOfItemsPerRow + 1
-                let cellWidth = floor((screenWidth - (CGFloat(horizontalSections) * (edgeInsets.left)) ) / CGFloat(numberOfItemsPerRow))
+            let screenWidth = UIScreen.main.bounds.width
+            let horizontalSections = numberOfItemsPerRow + 1
+            let cellWidth = floor((screenWidth - (CGFloat(horizontalSections) * (edgeInsets.left)) ) / CGFloat(numberOfItemsPerRow))
 
-                if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.minimumLineSpacing = CGFloat(config.verticalCellSpacing ?? 0.0)
-                    flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
-                }
+            collectionViewLayout.minimumLineSpacing = CGFloat(config.verticalCellSpacing ?? 0.0)
+            collectionViewLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
 
-                AssetGridThumbnailSize = CGSize(width: cellWidth * 2.0, height: cellWidth * 2.0)
-            }
-
-            self.topConstraint?.autoRemove()
-            if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
-                self.topConstraint = self.collectionView!.autoPinEdge(toSuperviewEdge: .top, withInset: 44)
-            } else {
-                self.topConstraint = self.collectionView!.autoPinEdge(toSuperviewEdge: .top, withInset: 64)
-            }
-            collectionView.collectionViewLayout.invalidateLayout()
+            assetGridThumbnailSize = CGSize(width: cellWidth * 2.0, height: cellWidth * 2.0)
         }
+
+        topConstraint?.autoRemove()
+        if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
+            topConstraint = collectionView.autoPinEdge(toSuperviewEdge: .top, withInset: 44)
+        } else {
+            topConstraint = collectionView.autoPinEdge(toSuperviewEdge: .top, withInset: 64)
+        }
+        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     override open func viewDidAppear(_ animated: Bool) {
@@ -178,30 +146,8 @@ open class SimpleAssetPickerViewController: UIViewController {
         // Begin caching assets in and around collection view's visible rect.
         DispatchQueue.main.async {
             self.updateCachedAssets()
-            if let visibleIndexPaths = self.collectionView?.indexPathsForVisibleItems {
-                self.collectionView?.reloadItems(at: visibleIndexPaths)
-            }
+            self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
         }
-    }
-
-    fileprivate func setupCollectionView() {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionViewLayout = layout
-
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: collectionViewLayout!)
-        collectionView!.translatesAutoresizingMaskIntoConstraints = false
-        collectionView!.backgroundColor = .white
-        collectionView!.delegate   = self
-        collectionView!.dataSource = self
-        collectionView!.register(AssetCollectionViewCell.self, forCellWithReuseIdentifier: AssetCollectionCellReuseIdentifier)
-        collectionView!.allowsSelection = true
-        collectionView!.allowsMultipleSelection = true
-        self.view.addSubview(collectionView!)
-
-        topConstraint = collectionView!.autoPinEdge(toSuperviewEdge: .top, withInset: 64)
-        collectionView!.autoPinEdge(toSuperviewEdge: .bottom)
-        collectionView!.autoPinEdge(toSuperviewEdge: .right)
-        collectionView!.autoPinEdge(toSuperviewEdge: .left)
     }
 
 
@@ -244,7 +190,7 @@ open class SimpleAssetPickerViewController: UIViewController {
     func updateSelectedAssetsWithIndexPaths(_ indexPaths: [IndexPath]) {
         let config = SimpleAssetPickerConfig.sharedConfig()
         if indexPaths.count >= config.minMediaSelectionAmount && indexPaths.count <= config.maxMediaSelectionAmount {
-            print("Meets requirements \(indexPaths.count)")
+            // print("[SAP DEBUG] Meets requirements \(indexPaths.count)")
             var assets = [PHAsset]()
             for indexPath in indexPaths {
                 assets.append(self.assetsFetchResults.object(at: indexPath.item) )
@@ -254,7 +200,7 @@ open class SimpleAssetPickerViewController: UIViewController {
                 delegate.didSatisfyMediaRequirements(self, assets: assets)
             }
         } else {
-            print("Broke selection requirements")
+            // print("[SAP DEBUG] Broke selection requirements")
             self.selectedAssets = []
             if let delegate = self.delegate {
                 delegate.didBreakMediaRequirements(self)
@@ -262,40 +208,34 @@ open class SimpleAssetPickerViewController: UIViewController {
         }
     }
 
-    // MARK: UIScrollViewDelegate
-//    public func scrollViewDidScroll(scrollView: UIScrollView) {
-        // Update cached assets for the new visible area.
-//        self.updateCachedAssets()
-//    }
-
     // MARK: - Asset Caching
     func resetCachedAssets() {
-        self.imageManager?.stopCachingImagesForAllAssets()
-        self.previousPreheatRect = CGRect.zero
+        imageManager?.stopCachingImagesForAllAssets()
+        previousPreheatRect = CGRect.zero
     }
 
     func updateCachedAssets() {
         if (self.isViewLoaded != true && self.view.window == nil) || self.libraryAccessGranted == false {
-            print("returning before updating cached assets")
+            // print("returning before updating cached assets")
             return
         }
 
         // The preheat window is twice the height of the visible rect.
-        var preheatRect = self.collectionView?.bounds ?? CGRect.zero
+        var preheatRect = self.collectionView.bounds
         preheatRect = preheatRect.insetBy(dx: 0.0, dy: -0.5 * preheatRect.height)
 
         /*
          Check if the collection view is showing an area that is significantly
          different to the last preheated area.
          */
-        let delta = abs(preheatRect.midY - self.previousPreheatRect!.midY)
-        if delta > (self.collectionView?.bounds)!.height / 3.0 {
+        let delta = abs(preheatRect.midY - previousPreheatRect.midY)
+        if delta > collectionView.bounds.height / 3.0 {
 
             // Compute the assets to start caching and to stop caching.
             var addedIndexPaths = [IndexPath]()
             var removedIndexPaths = [IndexPath]()
 
-            self.computeDifferenceBetweenRect(self.previousPreheatRect!, newRect: preheatRect, removedHandler: { (removedRect) -> Void in
+            computeDifferenceBetweenRect(previousPreheatRect, newRect: preheatRect, removedHandler: { (removedRect) -> Void in
                 if let indexPaths = self.indexPathsForElementsInRect(removedRect) {
                     removedIndexPaths.append(contentsOf: indexPaths)
                 }
@@ -305,24 +245,25 @@ open class SimpleAssetPickerViewController: UIViewController {
                     }
             })
 
-            let assetsToStartCaching = self.assetsAtIndexPaths(addedIndexPaths as NSArray)
-            let assetsToStopCaching = self.assetsAtIndexPaths(removedIndexPaths as NSArray)
+            let assetsToStartCaching = assetsAtIndexPaths(addedIndexPaths as NSArray)
+            let assetsToStopCaching = assetsAtIndexPaths(removedIndexPaths as NSArray)
 
             // Update the assets the PHCachingImageManager is caching.
             if let assetsToStartCaching = assetsToStartCaching {
-                self.imageManager?.startCachingImages(for: assetsToStartCaching, targetSize: self.AssetGridThumbnailSize, contentMode: .aspectFill, options: nil)
+                imageManager?.startCachingImages(for: assetsToStartCaching, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil)
             }
 
             if let assetsToStopCaching = assetsToStopCaching {
-                self.imageManager?.stopCachingImages(for: assetsToStopCaching, targetSize: self.AssetGridThumbnailSize, contentMode: .aspectFill, options: nil)
+                imageManager?.stopCachingImages(for: assetsToStopCaching, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil)
             }
 
             // Store the preheat rect to compare against in the future.
-            self.previousPreheatRect = preheatRect
+            previousPreheatRect = preheatRect
         }
     }
 
     func computeDifferenceBetweenRect(_ oldRect: CGRect, newRect: CGRect, removedHandler: ((_ removedRect: CGRect) -> Void)?, addedHandler: ((_ addedRect: CGRect) -> Void)?) {
+        print("COMPUTE DIFFERENCE")
         if newRect.intersects(oldRect) {
             let oldMaxY = oldRect.maxY
             let oldMinY = oldRect.minY
@@ -379,7 +320,7 @@ open class SimpleAssetPickerViewController: UIViewController {
     }
 
     func indexPathsForElementsInRect(_ rect: CGRect) -> [IndexPath]? {
-        let allLayoutAttributes = self.collectionView?.collectionViewLayout.layoutAttributesForElements(in: rect)
+        let allLayoutAttributes = self.collectionView.collectionViewLayout.layoutAttributesForElements(in: rect)
         if allLayoutAttributes?.count == 0 { return nil }
         var indexPaths = [IndexPath]()
         for layoutAttributes in allLayoutAttributes! {
@@ -415,26 +356,26 @@ extension SimpleAssetPickerViewController: UICollectionViewDelegate {
             }
         }
 
-        self.updateSelectedAssetsWithIndexPaths(collectionView.indexPathsForSelectedItems ?? [])
+        updateSelectedAssetsWithIndexPaths(collectionView.indexPathsForSelectedItems ?? [])
     }
 
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        self.updateSelectedAssetsWithIndexPaths(collectionView.indexPathsForSelectedItems ?? [])
+        updateSelectedAssetsWithIndexPaths(collectionView.indexPathsForSelectedItems ?? [])
     }
 }
 
 extension SimpleAssetPickerViewController: UICollectionViewDataSource {
     // MARK: - UICollectionViewDataSource
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.assetsFetchResults.count
+        return assetsFetchResults.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let asset = self.assetsFetchResults[indexPath.item]
-
         // Dequeue a AssetCollectionViewCell.
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AssetCollectionCellReuseIdentifier, for: indexPath) as? AssetCollectionViewCell {
+
+            let asset = assetsFetchResults[indexPath.item]
             cell.representedAssetIdentifier = asset.localIdentifier
 
             // Load icon assets from Bundle.
@@ -473,7 +414,7 @@ extension SimpleAssetPickerViewController: UICollectionViewDataSource {
             }
 
             // Request an image for the asset from the PHCachingImageManager.
-            self.imageManager?.requestImage(for: asset, targetSize: self.AssetGridThumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { (result, info) -> Void in
+            imageManager?.requestImage(for: asset, targetSize: assetGridThumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { (result, info) -> Void in
                 // Set the cell's thumbnail image if it's still showing the same asset.
                 if cell.representedAssetIdentifier == asset.localIdentifier {
                     cell.imageView.image = result
@@ -501,32 +442,32 @@ extension SimpleAssetPickerViewController: PHPhotoLibraryChangeObserver {
             // Get the new fetch result.
             self.assetsFetchResults = collectionChanges.fetchResultAfterChanges
 
-            guard let collectionView = self.collectionView else { return }
+            //guard let collectionView = self.collectionView else { return }
 
             if collectionChanges.hasIncrementalChanges == true || collectionChanges.hasMoves == true {
                 // Reload the collection view if the incremental diffs are not available
-                collectionView.reloadData()
+                self.collectionView.reloadData()
             } else {
                 /*
                  Tell the collection view to animate insertions and deletions if we
                  have incremental diffs.
                  */
-                collectionView.performBatchUpdates({ () -> Void in
+                self.collectionView.performBatchUpdates({ () -> Void in
                     if let removedIndexes = collectionChanges.removedIndexes {
                         if removedIndexes.count > 0 {
-                            collectionView.deleteItems(at: removedIndexes.aapl_indexPathsFromIndexesWithSection(0) as! [IndexPath])
+                            self.collectionView.deleteItems(at: removedIndexes.indexPathsFromIndexesWithSection(0))
                         }
                     }
 
                     if let insertedIndexes = collectionChanges.insertedIndexes {
                         if insertedIndexes.count > 0 {
-                            collectionView.insertItems(at: insertedIndexes.aapl_indexPathsFromIndexesWithSection(0) as! [IndexPath])
+                            self.collectionView.insertItems(at: insertedIndexes.indexPathsFromIndexesWithSection(0))
                         }
                     }
 
                     if let changedIndexes = collectionChanges.changedIndexes {
                         if changedIndexes.count > 0 {
-                            collectionView.reloadItems(at: changedIndexes.aapl_indexPathsFromIndexesWithSection(0) as! [IndexPath])
+                            self.collectionView.reloadItems(at: changedIndexes.indexPathsFromIndexesWithSection(0))
                         }
                     }
 

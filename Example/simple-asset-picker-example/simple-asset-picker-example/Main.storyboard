@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iAC-pP-P45">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iAC-pP-P45">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -69,7 +69,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iAC-pP-P45" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="acD-hu-SkU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="acD-hu-SkU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -95,7 +95,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IkR-3X-V66" id="GLa-pd-pwH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -124,7 +124,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="BHc-s5-8d3">
-                        <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="w1E-wg-h33">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="w1E-wg-h33">
                             <connections>
                                 <action selector="handleNextButtonItem:" destination="wkc-lU-xvB" id="6u7-9r-dlk"/>
                             </connections>
@@ -141,6 +141,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0hF-pA-rTz"/>
+        <segue reference="RWa-At-amu"/>
     </inferredMetricsTieBreakers>
 </document>

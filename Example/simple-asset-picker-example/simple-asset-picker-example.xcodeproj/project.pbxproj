@@ -124,12 +124,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "John Meeker";
 				TargetAttributes = {
 					52AFE55F1E4150CF00BF8FE7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = HJWHRG4HXB;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -336,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 030F65FA464E25DDAE0F6B47 /* Pods-simple-asset-picker-example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJWHRG4HXB;
 				INFOPLIST_FILE = "simple-asset-picker-example/Info.plist";
@@ -350,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CB876D634EAA781D77C8E26 /* Pods-simple-asset-picker-example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJWHRG4HXB;
 				INFOPLIST_FILE = "simple-asset-picker-example/Info.plist";

@@ -31,8 +31,8 @@ open class SimpleAssetPickerConfig: NSObject {
     fileprivate static var instance: SimpleAssetPickerConfig!
 
     // Asset selection constraints
-    open var minMediaSelectionAmount: Int?
-    open var maxMediaSelectionAmount: Int?
+    open var minMediaSelectionAmount: Int = 0
+    open var maxMediaSelectionAmount: Int = 0
 
     // Appearance config variables
     open var numberOfItemsPerRow: Int?

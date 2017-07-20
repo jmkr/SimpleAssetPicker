@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0043D2E2E85274E9DCC789297132E6BA /* SimpleAssetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 014860579B603EB6B986484AC2C2F6B0 /* SimpleAssetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00560A2FCBC2874BFB38D82921FB21A3 /* SimpleAssetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72949AFD7221520E7AC5A00CB0A8371A /* SimpleAssetPickerViewController.swift */; };
+		0043D2E2E85274E9DCC789297132E6BA /* SimpleAssetPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 466BFAFBC89397675C85BCB6050663AC /* SimpleAssetPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0071BBFF5A8BA61D64C2BE5CAC497B03 /* Pods-simple-asset-picker-example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70EB803024A806639FC3F45AD3DC01A4 /* Pods-simple-asset-picker-example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		10D4654154FB7C7061114157BD01DED1 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9423859E125D49126202DB6E290B2 /* AssetCollectionViewCell.swift */; };
 		11DBCDA8F793C44D3271235654B27C81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */; };
-		150AC6517362963DBE2EAAD67AE7543C /* NSIndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D04D19FEBD8657D614527F18BF79156 /* NSIndexSet+Convenience.swift */; };
-		1A966006D4962DFCC6CDF3D196F8AE1F /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A0F909CC18C62140EC0C9A7778A9E71 /* SimpleAssetPicker.bundle */; };
+		1450B8419F8040CAF12227D26A17C176 /* IndexSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF7136D896CBE3B8C7C289DB010D72 /* IndexSet+Convenience.swift */; };
+		1A966006D4962DFCC6CDF3D196F8AE1F /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C1BBAEF36B549FFC39F7AE1BF172F92 /* SimpleAssetPicker.bundle */; };
+		2478D522A549656ABD39915F5E3996EF /* SimpleAssetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FC863AA414C58CDFD61FCDC830368C /* SimpleAssetPickerViewController.swift */; };
+		36061CDE65F3A315EEB4AD5F3961996D /* SimpleAssetPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A09BD82572EE2B30863A3E1FD1238 /* SimpleAssetPickerConfig.swift */; };
 		3C0D90FCBE07F3279AEC9B98A095A6EC /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47303D343F485F36CDBA219A72A08727 /* CIImage+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB61195104B90BA19C75D0F6C5CBF74 /* CIImage+Convenience.swift */; };
+		4629E450A1F1ACEA0DC3F2061B5B6E13 /* SimpleAssetPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31CCD57A63E970262DBC805326E0FA /* SimpleAssetPicker-dummy.m */; };
+		469BEE4B00C2ED233950A29C75A53333 /* UIImage+SAPAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F477E22DB48E7E735EDA8CAA82A682E4 /* UIImage+SAPAdditions.swift */; };
 		49D60918E4693FD24368A13D8AD3C122 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A236E45033222037AEE86F8926BFEA0 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CF55A5DE9FD43E78B4FB217CD8A437F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D33F94815FB7E5AA7DE839790F1FA44 /* Photos.framework */; };
@@ -23,16 +24,14 @@
 		53DA55DF25C6C1B3AFF04D3B2089EC7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */; };
 		566DBB05A1E5878FC4D94D846F291040 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */; };
 		69720C45507C458FB5B099C4F2753846 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */; };
+		698B821998A88F03C97DB4FBA0E2849B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3147315EE60EAA5763599352F919F1 /* GradientView.swift */; };
 		6F0159433B3A0E86B7E80702779057F0 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FDD9A418FD7D8BABC64428DF4F9845F /* Pods-simple-asset-picker-example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D42D647490F687C1190E730A8CCC7CC /* Pods-simple-asset-picker-example-dummy.m */; };
 		7A55EB150A5772FCA71445658C8513CE /* SimpleAssetPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 346FC9CEE8F8405A26AC1D554ACF77CD /* SimpleAssetPicker.bundle */; };
-		7D40712581F9516B8B7FE41197CEE442 /* SimpleAssetPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6450DDBF5B47E343F1EFA671BB541401 /* SimpleAssetPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9493B0ECC4D0DB4B6C46CAE9751A4D6A /* SimpleAssetPickerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F593C3A696493753A7EF2142599A2 /* SimpleAssetPickerConfig.swift */; };
-		9F761054C2EC8EEF0ECCCC63310A1366 /* SimpleAssetPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE15F48685BCE4FB68E45766D9DF9C /* SimpleAssetPicker-dummy.m */; };
+		7D40712581F9516B8B7FE41197CEE442 /* SimpleAssetPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E90B5BF6421AD43D5BF7692947CC0F83 /* SimpleAssetPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A974E0ED7D751C1FFDD8B7C1740FC5F8 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B96AAF10B6891774430CCFA5B052D425 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */; };
-		BC6B6F0F1BAC0F65E7D505207FB9C3CC /* UIImage+SAPAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BCEBEA8EA22408B886FDFFE1B4AFF /* UIImage+SAPAdditions.swift */; };
-		C7EC0D6E39C2E769903285A172E9CF28 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003145520F95473C7EAA7AF72E7701B3 /* GradientView.swift */; };
+		C392442FFE93EBEDBDDDECAD2750F732 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DED5EDCDB67DC94F6CDFC1D6A4B7A5C /* AssetCollectionViewCell.swift */; };
 		C847A1AFD71F7B95328E62C418CCE4C9 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */; };
 		D372FA12D39EAB813C25A4F789D8805A /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E34AC1714A09FC89FCD55D2C146E6A99 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,54 +70,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		003145520F95473C7EAA7AF72E7701B3 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		014860579B603EB6B986484AC2C2F6B0 /* SimpleAssetPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SimpleAssetPicker.h; sourceTree = "<group>"; };
 		01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
-		037FA1ADA1ACB9640BD3373BA12EB8C0 /* SimpleAssetPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SimpleAssetPicker.modulemap; sourceTree = "<group>"; };
-		0A0F909CC18C62140EC0C9A7778A9E71 /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = SimpleAssetPicker.bundle; sourceTree = "<group>"; };
-		0D04D19FEBD8657D614527F18BF79156 /* NSIndexSet+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Convenience.swift"; sourceTree = "<group>"; };
+		133B3002AA569CAA25F2BFB3E80DAFCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A3147315EE60EAA5763599352F919F1 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PureLayout.modulemap; sourceTree = "<group>"; };
 		256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
 		261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
-		28BAAFD20A051FF5C8727E07FF2196A4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D31CCD57A63E970262DBC805326E0FA /* SimpleAssetPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleAssetPicker-dummy.m"; sourceTree = "<group>"; };
 		2DB2AC35F4B4E27A97766EFD6E34342D /* Pods-simple-asset-picker-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-simple-asset-picker-example.modulemap"; sourceTree = "<group>"; };
 		2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		30274682FAB8E68A88DF1079E4B41C06 /* ResourceBundle-SimpleAssetPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SimpleAssetPicker-Info.plist"; sourceTree = "<group>"; };
 		31C0AD8EBC28951E0A6848B60D6208E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335ACABAB593255001251F34CF63AFC8 /* Pods-simple-asset-picker-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-simple-asset-picker-example.release.xcconfig"; sourceTree = "<group>"; };
 		346FC9CEE8F8405A26AC1D554ACF77CD /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SimpleAssetPicker.bundle; path = SimpleAssetPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D42D647490F687C1190E730A8CCC7CC /* Pods-simple-asset-picker-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-simple-asset-picker-example-dummy.m"; sourceTree = "<group>"; };
 		3DB30EEC6732B81AA1DB3B75ADE06BBE /* Pods-simple-asset-picker-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-simple-asset-picker-example-acknowledgements.plist"; sourceTree = "<group>"; };
 		3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		466BFAFBC89397675C85BCB6050663AC /* SimpleAssetPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SimpleAssetPicker.h; sourceTree = "<group>"; };
 		5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		6450DDBF5B47E343F1EFA671BB541401 /* SimpleAssetPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleAssetPicker-umbrella.h"; sourceTree = "<group>"; };
 		68CECDBDF6CD6BFC8C1E744CC457D10B /* Pods_simple_asset_picker_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_simple_asset_picker_example.framework; path = "Pods-simple-asset-picker-example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D33F94815FB7E5AA7DE839790F1FA44 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
 		6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
 		6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
 		70EB803024A806639FC3F45AD3DC01A4 /* Pods-simple-asset-picker-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-simple-asset-picker-example-umbrella.h"; sourceTree = "<group>"; };
-		72949AFD7221520E7AC5A00CB0A8371A /* SimpleAssetPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerViewController.swift; sourceTree = "<group>"; };
+		7DED5EDCDB67DC94F6CDFC1D6A4B7A5C /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		81086255C1583568A5E7D0EDE9CAA52E /* SimpleAssetPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SimpleAssetPicker.modulemap; sourceTree = "<group>"; };
 		882163AEB6D3FA646908F897B46A7992 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		904A0AAEB96DFDD751C4765C2AD7E04C /* Pods-simple-asset-picker-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-simple-asset-picker-example.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97A8E6F2390013F549A6646FD4BA7E2A /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BB61195104B90BA19C75D0F6C5CBF74 /* CIImage+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CIImage+Convenience.swift"; sourceTree = "<group>"; };
-		9EAE15F48685BCE4FB68E45766D9DF9C /* SimpleAssetPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleAssetPicker-dummy.m"; sourceTree = "<group>"; };
+		9C1BBAEF36B549FFC39F7AE1BF172F92 /* SimpleAssetPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = SimpleAssetPicker.bundle; sourceTree = "<group>"; };
+		A08B596248CCFFD36B5DD08613BF359B /* SimpleAssetPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimpleAssetPicker.xcconfig; sourceTree = "<group>"; };
 		AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		AACC621BC6ED9336C359FE6ED3296371 /* SimpleAssetPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimpleAssetPicker.framework; path = SimpleAssetPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimpleAssetPicker.xcconfig; sourceTree = "<group>"; };
+		BDB7998AD05F49DCCDA6F7A945951B2A /* SimpleAssetPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleAssetPicker-prefix.pch"; sourceTree = "<group>"; };
 		C313C81514560F527297D1651EFCAAA7 /* Pods-simple-asset-picker-example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-simple-asset-picker-example-resources.sh"; sourceTree = "<group>"; };
-		C81F593C3A696493753A7EF2142599A2 /* SimpleAssetPickerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerConfig.swift; sourceTree = "<group>"; };
-		C9FD24738893FCF8771FE4AC18A1A486 /* SimpleAssetPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleAssetPicker-prefix.pch"; sourceTree = "<group>"; };
+		C9FF7136D896CBE3B8C7C289DB010D72 /* IndexSet+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "IndexSet+Convenience.swift"; sourceTree = "<group>"; };
+		D33A09BD82572EE2B30863A3E1FD1238 /* SimpleAssetPickerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerConfig.swift; sourceTree = "<group>"; };
 		D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		DAF9423859E125D49126202DB6E290B2 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB211EAC13E0382B9138002AAF29AC2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DC48A19E2AA264922693A9C30BC30743 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC9BCEBEA8EA22408B886FDFFE1B4AFF /* UIImage+SAPAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+SAPAdditions.swift"; sourceTree = "<group>"; };
+		DD4734D246A85334BFCE7542A532C7C3 /* ResourceBundle-SimpleAssetPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SimpleAssetPicker-Info.plist"; sourceTree = "<group>"; };
+		E5FC863AA414C58CDFD61FCDC830368C /* SimpleAssetPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAssetPickerViewController.swift; sourceTree = "<group>"; };
+		E90B5BF6421AD43D5BF7692947CC0F83 /* SimpleAssetPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleAssetPicker-umbrella.h"; sourceTree = "<group>"; };
 		ED4432A245702E00AFB89932E1100B33 /* Pods-simple-asset-picker-example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-simple-asset-picker-example-frameworks.sh"; sourceTree = "<group>"; };
 		F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		F477E22DB48E7E735EDA8CAA82A682E4 /* UIImage+SAPAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+SAPAdditions.swift"; sourceTree = "<group>"; };
 		FFC92E9364ED9E6249656D4F7834DCF8 /* Pods-simple-asset-picker-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-simple-asset-picker-example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,35 +165,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		179295F3E783AFA2ED458D058C0028DE /* SimpleAssetPicker */ = {
+		0880F061CC27A46D8B5A2BE518414025 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DAF9423859E125D49126202DB6E290B2 /* AssetCollectionViewCell.swift */,
-				9BB61195104B90BA19C75D0F6C5CBF74 /* CIImage+Convenience.swift */,
-				003145520F95473C7EAA7AF72E7701B3 /* GradientView.swift */,
-				0D04D19FEBD8657D614527F18BF79156 /* NSIndexSet+Convenience.swift */,
-				014860579B603EB6B986484AC2C2F6B0 /* SimpleAssetPicker.h */,
-				C81F593C3A696493753A7EF2142599A2 /* SimpleAssetPickerConfig.swift */,
-				72949AFD7221520E7AC5A00CB0A8371A /* SimpleAssetPickerViewController.swift */,
-				EC9BCEBEA8EA22408B886FDFFE1B4AFF /* UIImage+SAPAdditions.swift */,
-			);
-			name = SimpleAssetPicker;
-			path = SimpleAssetPicker;
-			sourceTree = "<group>";
-		};
-		2747F7B9C70D76B973189EE28422D7D4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				28BAAFD20A051FF5C8727E07FF2196A4 /* Info.plist */,
-				30274682FAB8E68A88DF1079E4B41C06 /* ResourceBundle-SimpleAssetPicker-Info.plist */,
-				037FA1ADA1ACB9640BD3373BA12EB8C0 /* SimpleAssetPicker.modulemap */,
-				B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */,
-				9EAE15F48685BCE4FB68E45766D9DF9C /* SimpleAssetPicker-dummy.m */,
-				C9FD24738893FCF8771FE4AC18A1A486 /* SimpleAssetPicker-prefix.pch */,
-				6450DDBF5B47E343F1EFA671BB541401 /* SimpleAssetPicker-umbrella.h */,
+				133B3002AA569CAA25F2BFB3E80DAFCE /* Info.plist */,
+				DD4734D246A85334BFCE7542A532C7C3 /* ResourceBundle-SimpleAssetPicker-Info.plist */,
+				81086255C1583568A5E7D0EDE9CAA52E /* SimpleAssetPicker.modulemap */,
+				A08B596248CCFFD36B5DD08613BF359B /* SimpleAssetPicker.xcconfig */,
+				2D31CCD57A63E970262DBC805326E0FA /* SimpleAssetPicker-dummy.m */,
+				BDB7998AD05F49DCCDA6F7A945951B2A /* SimpleAssetPicker-prefix.pch */,
+				E90B5BF6421AD43D5BF7692947CC0F83 /* SimpleAssetPicker-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/simple-asset-picker-example/Pods/Target Support Files/SimpleAssetPicker";
+			sourceTree = "<group>";
+		};
+		2DAB84D74634C044EF70A2C4893EC7E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC208703D0B7CAF8BEACDF2F36B89CDF /* SimpleAssetPicker */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */ = {
@@ -212,10 +202,25 @@
 			path = "../Target Support Files/PureLayout";
 			sourceTree = "<group>";
 		};
+		3AB1FEB07210999CF08C61D9EA9264DA /* SimpleAssetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				7DED5EDCDB67DC94F6CDFC1D6A4B7A5C /* AssetCollectionViewCell.swift */,
+				1A3147315EE60EAA5763599352F919F1 /* GradientView.swift */,
+				C9FF7136D896CBE3B8C7C289DB010D72 /* IndexSet+Convenience.swift */,
+				466BFAFBC89397675C85BCB6050663AC /* SimpleAssetPicker.h */,
+				D33A09BD82572EE2B30863A3E1FD1238 /* SimpleAssetPickerConfig.swift */,
+				E5FC863AA414C58CDFD61FCDC830368C /* SimpleAssetPickerViewController.swift */,
+				F477E22DB48E7E735EDA8CAA82A682E4 /* UIImage+SAPAdditions.swift */,
+			);
+			name = SimpleAssetPicker;
+			path = SimpleAssetPicker;
+			sourceTree = "<group>";
+		};
 		3F474BF32BE01DCF3F85A7E136DB6C99 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7E7C565853F173DC2052AF7C58E528B7 /* SimpleAssetPicker */,
+				F72EA44DF1BE01BB2F403304DC3CFDAE /* SimpleAssetPicker */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -229,15 +234,6 @@
 				AACC621BC6ED9336C359FE6ED3296371 /* SimpleAssetPicker.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7659DEA5DD765501CCA59F5C98B9B394 /* SimpleAssetPicker */ = {
-			isa = PBXGroup;
-			children = (
-				0A0F909CC18C62140EC0C9A7778A9E71 /* SimpleAssetPicker.bundle */,
-			);
-			name = SimpleAssetPicker;
-			path = SimpleAssetPicker;
 			sourceTree = "<group>";
 		};
 		7B8692115B83CF0603FBB14AC029C28F /* Frameworks */ = {
@@ -279,17 +275,6 @@
 			path = "Target Support Files/Pods-simple-asset-picker-example";
 			sourceTree = "<group>";
 		};
-		7E7C565853F173DC2052AF7C58E528B7 /* SimpleAssetPicker */ = {
-			isa = PBXGroup;
-			children = (
-				A75A72529DEED10A4F8120E139256E2B /* Resources */,
-				179295F3E783AFA2ED458D058C0028DE /* SimpleAssetPicker */,
-				2747F7B9C70D76B973189EE28422D7D4 /* Support Files */,
-			);
-			name = SimpleAssetPicker;
-			path = ../../..;
-			sourceTree = "<group>";
-		};
 		9C6F93A5AE4A9293598494393460DF93 /* PureLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,14 +301,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A75A72529DEED10A4F8120E139256E2B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7659DEA5DD765501CCA59F5C98B9B394 /* SimpleAssetPicker */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		B4DAC2E55DAD05BD2CB3CD54011ABF1B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +308,26 @@
 				6D33F94815FB7E5AA7DE839790F1FA44 /* Photos.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		EC208703D0B7CAF8BEACDF2F36B89CDF /* SimpleAssetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				9C1BBAEF36B549FFC39F7AE1BF172F92 /* SimpleAssetPicker.bundle */,
+			);
+			name = SimpleAssetPicker;
+			path = SimpleAssetPicker;
+			sourceTree = "<group>";
+		};
+		F72EA44DF1BE01BB2F403304DC3CFDAE /* SimpleAssetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				2DAB84D74634C044EF70A2C4893EC7E7 /* Resources */,
+				3AB1FEB07210999CF08C61D9EA9264DA /* SimpleAssetPicker */,
+				0880F061CC27A46D8B5A2BE518414025 /* Support Files */,
+			);
+			name = SimpleAssetPicker;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,7 +371,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 747CCE66221B5F9B0AF26F472843977C /* Build configuration list for PBXNativeTarget "SimpleAssetPicker" */;
 			buildPhases = (
-				1B0601AEEC2CF4F56B27BA6D14DE2D25 /* Sources */,
+				42970193E8E303E1932A43215F17198E /* Sources */,
 				DABF23B07740AE7C509E675A5C17B1A1 /* Frameworks */,
 				CA0A748677000E28159091D14D9E4F62 /* Resources */,
 				DBED1D1466D66CDAECC95309012E8ED2 /* Headers */,
@@ -500,18 +497,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0601AEEC2CF4F56B27BA6D14DE2D25 /* Sources */ = {
+		42970193E8E303E1932A43215F17198E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D4654154FB7C7061114157BD01DED1 /* AssetCollectionViewCell.swift in Sources */,
-				47303D343F485F36CDBA219A72A08727 /* CIImage+Convenience.swift in Sources */,
-				C7EC0D6E39C2E769903285A172E9CF28 /* GradientView.swift in Sources */,
-				150AC6517362963DBE2EAAD67AE7543C /* NSIndexSet+Convenience.swift in Sources */,
-				9F761054C2EC8EEF0ECCCC63310A1366 /* SimpleAssetPicker-dummy.m in Sources */,
-				9493B0ECC4D0DB4B6C46CAE9751A4D6A /* SimpleAssetPickerConfig.swift in Sources */,
-				00560A2FCBC2874BFB38D82921FB21A3 /* SimpleAssetPickerViewController.swift in Sources */,
-				BC6B6F0F1BAC0F65E7D505207FB9C3CC /* UIImage+SAPAdditions.swift in Sources */,
+				C392442FFE93EBEDBDDDECAD2750F732 /* AssetCollectionViewCell.swift in Sources */,
+				698B821998A88F03C97DB4FBA0E2849B /* GradientView.swift in Sources */,
+				1450B8419F8040CAF12227D26A17C176 /* IndexSet+Convenience.swift in Sources */,
+				4629E450A1F1ACEA0DC3F2061B5B6E13 /* SimpleAssetPicker-dummy.m in Sources */,
+				36061CDE65F3A315EEB4AD5F3961996D /* SimpleAssetPickerConfig.swift in Sources */,
+				2478D522A549656ABD39915F5E3996EF /* SimpleAssetPickerViewController.swift in Sources */,
+				469BEE4B00C2ED233950A29C75A53333 /* UIImage+SAPAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +561,7 @@
 /* Begin XCBuildConfiguration section */
 		4CF64D4C4A0D1DE3BDC9E2347C292D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			baseConfigurationReference = A08B596248CCFFD36B5DD08613BF359B /* SimpleAssetPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -670,7 +666,7 @@
 		};
 		807A8D0C146045440DA0FEEB720DF848 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			baseConfigurationReference = A08B596248CCFFD36B5DD08613BF359B /* SimpleAssetPicker.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SimpleAssetPicker";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -687,7 +683,7 @@
 		};
 		9605396278750AD7D39075119BDC9DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			baseConfigurationReference = A08B596248CCFFD36B5DD08613BF359B /* SimpleAssetPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -822,7 +818,7 @@
 		};
 		BE74F3137C1D1F04B12027E662B1D4BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2F24CE8619C15EB5F2C56D7769B5E94 /* SimpleAssetPicker.xcconfig */;
+			baseConfigurationReference = A08B596248CCFFD36B5DD08613BF359B /* SimpleAssetPicker.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SimpleAssetPicker";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
